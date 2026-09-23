@@ -1,0 +1,5 @@
+packages:
+  - 'shared'
+  - 'shell'
+  - 'initial-data-entry'
+  - 'data-entry'

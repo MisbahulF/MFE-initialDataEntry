@@ -1,0 +1,26 @@
+{
+  "name": "template-mfe-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "pnpm install",
+    "build:shared": "pnpm --filter @template/shared build",
+    "build:shell": "pnpm run build:shared && pnpm --filter @template/shell build",
+    "build:father": "pnpm run build:shared && pnpm --filter @template/mfe-father build",
+    "build:ide": "pnpm run build:shared && pnpm --filter @template/mfe-initial-data-entry build",
+    "build:de": "pnpm run build:shared && pnpm --filter @template/mfe-data-entry build",
+    "build": "pnpm run build:shared && pnpm --filter @template/shell build && pnpm --filter @template/mfe-father build && pnpm --filter @template/mfe-initial-data-entry build && pnpm --filter @template/mfe-data-entry build",
+    "dev:shell": "pnpm --filter @template/shell dev",
+    "dev:father": "pnpm --filter @template/mfe-father dev",
+    "dev:ide": "pnpm --filter @template/mfe-initial-data-entry dev",
+    "dev:de": "pnpm --filter @template/mfe-data-entry dev",
+    "dev": "concurrently --names \"shell,ide,de\" --prefix-colors \"yellow,green,blue\" \"pnpm --filter @template/shell dev\" \"pnpm --filter @template/mfe-initial-data-entry dev\" \"pnpm --filter @template/mfe-data-entry dev\"",
+    "start": "pnpm install && pnpm dev",
+    "start:all": "pnpm install && pnpm dev",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r exec rm -rf dist node_modules .webpack-cache"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
