@@ -400,6 +400,8 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
   const isViewingExisting = hasSavedProspect;
 
   const [mandatoryErrors, setMandatoryErrors] = useState<string[]>([]);
+
+
   const [showMandatoryModal, setShowMandatoryModal] = useState<boolean>(false);
 
   // Validasi seluruh bagian berwarna kuning pada Tab 0 (Informasi Source Aplikasi)
