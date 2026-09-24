@@ -21,8 +21,8 @@ export const InformasiPasangan: React.FC<InformasiPasanganProps> = ({
 
   return (
     <div className="space-y-4 animate-fade-in">
-      <div className="bg-white border border-[#007b83] rounded-xl shadow-sm overflow-hidden">
-        <div className="bg-gradient-to-r from-teal-700 via-[#007b83] to-teal-800 px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center shadow-2xs">
+      <div className="bg-white border border-orange-300/70 rounded-xl shadow-sm overflow-hidden">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center shadow-2xs">
           INFORMASI PASANGAN
         </div>
 
@@ -53,7 +53,7 @@ export const InformasiPasangan: React.FC<InformasiPasanganProps> = ({
               <div className="flex-1">
                 <TextField label="Kodepos" maxLength={10} value={formData?.kodeposPasangan || ''} onChange={(e) => onChange('kodeposPasangan', e.target.value)} placeholder="Contoh: 10260" />
               </div>
-              <button type="button" onClick={handleCariZip} className="px-3 py-1.5 bg-[#007b83] hover:bg-teal-800 text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0 mb-0.5">Cari</button>
+              <button type="button" onClick={handleCariZip} className="px-3 py-1.5 bg-[#F15A24] hover:bg-[#D94E1B] text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0 mb-0.5">Cari</button>
             </div>
             <TextField label="Kota" disabled value={formData?.kotaPasangan || ''} onChange={(e) => onChange('kotaPasangan', e.target.value)} placeholder="Kota otomatis terisi" />
           </div>
@@ -86,7 +86,7 @@ export const InformasiPasangan: React.FC<InformasiPasanganProps> = ({
 
       {onLanjut && (
         <div className="flex justify-end pt-2">
-          <button type="button" onClick={onLanjut} className="px-6 py-2 bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm cursor-pointer active:scale-95">Lanjut</button>
+          <button type="button" onClick={onLanjut} className="px-6 py-2 bg-gradient-to-r from-[#F15A24] to-[#E05A10] hover:from-[#E05A10] text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm cursor-pointer active:scale-95">Lanjut</button>
         </div>
       )}
     </div>

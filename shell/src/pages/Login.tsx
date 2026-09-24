@@ -32,9 +32,9 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-[#edf7f6] to-[#f4fbfb] flex flex-col font-sans text-slate-800 relative overflow-hidden selection:bg-[#005E5D] selection:text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-[#fff8f5] to-[#fbf4f0] flex flex-col font-sans text-slate-800 relative overflow-hidden selection:bg-[#F15A24] selection:text-white">
       {/* Subtle 3D Decorative Orbs in Background */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-gradient-to-tr from-[#005E5D]/20 to-teal-200/40 blur-3xl pointer-events-none" />
+      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-gradient-to-tr from-[#F15A24]/15 to-orange-200/30 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-gradient-to-br from-[#E05A10]/15 to-orange-200/30 blur-3xl pointer-events-none" />
 
       {/* Top bar */}
@@ -57,24 +57,24 @@ export const Login: React.FC = () => {
         <div className="w-full max-w-4xl flex flex-col lg:flex-row gap-8 items-stretch">
 
           {/* LEFT: Login form with 3D Card Depth */}
-          <div className="flex-1 min-w-0 bg-white/90 backdrop-blur-xl border border-white/80 rounded-2xl p-7 sm:p-9 shadow-[0_12px_40px_-10px_rgba(0,94,93,0.18),0_2px_6px_rgba(0,0,0,0.04)] relative">
+          <div className="flex-1 min-w-0 bg-white/90 backdrop-blur-xl border border-white/80 rounded-2xl p-7 sm:p-9 shadow-[0_12px_40px_-10px_rgba(241,90,36,0.15),0_2px_6px_rgba(0,0,0,0.04)] relative">
             {/* Ambient top highlight */}
-            <div className="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-[#005E5D] to-transparent rounded-full opacity-70" />
+            <div className="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-[#F15A24] to-transparent rounded-full opacity-70" />
 
             {/* Brand Header */}
             <div className="mb-7">
               <div className="flex items-center gap-3.5 mb-3">
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-[#005E5D] to-[#003d3c] flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(0,94,93,0.35)] ring-2 ring-teal-500/20 transform hover:scale-105 transition-transform duration-300">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-[#F15A24] to-[#D94E1B] flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(241,90,36,0.35)] ring-2 ring-orange-500/20 transform hover:scale-105 transition-transform duration-300">
                   <span className="text-white font-black text-base tracking-tighter drop-shadow-xs">BNI</span>
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] text-teal-800 font-bold uppercase tracking-widest bg-teal-50 px-2 py-0.5 rounded border border-teal-200">
+                    <span className="text-[10px] text-orange-950 font-bold uppercase tracking-widest bg-orange-50 px-2 py-0.5 rounded border border-orange-200">
                       Sistem Kredit Konsumer
                     </span>
                   </div>
                   <h1 className="text-2xl font-black text-slate-900 leading-tight tracking-tight mt-0.5">
-                    PROMPT <span className="text-[#005E5D]">eLO</span>
+                    PROMPT <span className="text-[#F15A24]">eLO</span>
                   </h1>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export const Login: React.FC = () => {
                     value={userId}
                     onChange={e => setUserId(e.target.value)}
                     placeholder="Masukkan User ID Anda"
-                    className="w-full pl-10 pr-3.5 py-2.5 text-xs bg-slate-50/70 hover:bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-3 focus:ring-[#005E5D]/20 focus:border-[#005E5D] focus:bg-white transition-all shadow-xs"
+                    className="w-full pl-10 pr-3.5 py-2.5 text-xs bg-slate-50/70 hover:bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-3 focus:ring-orange-500/20 focus:border-[#F15A24] focus:bg-white transition-all shadow-xs"
                     autoComplete="username"
                     required
                   />
@@ -122,7 +122,7 @@ export const Login: React.FC = () => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     placeholder="Masukkan Password Anda"
-                    className="w-full pl-10 pr-10 py-2.5 text-xs bg-slate-50/70 hover:bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-3 focus:ring-[#005E5D]/20 focus:border-[#005E5D] focus:bg-white transition-all shadow-xs"
+                    className="w-full pl-10 pr-10 py-2.5 text-xs bg-slate-50/70 hover:bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-3 focus:ring-orange-500/20 focus:border-[#F15A24] focus:bg-white transition-all shadow-xs"
                     autoComplete="current-password"
                     required
                   />
@@ -148,7 +148,7 @@ export const Login: React.FC = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full mt-2 py-3 bg-gradient-to-r from-[#005E5D] via-[#00706F] to-[#004b4a] hover:from-[#004e4d] hover:to-[#003d3c] active:scale-[0.99] text-white font-bold text-xs tracking-wide uppercase rounded-xl transition-all shadow-[0_4px_14px_rgba(0,94,93,0.38)] hover:shadow-[0_6px_20px_rgba(0,94,93,0.48)] hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full mt-2 py-3 bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] hover:from-[#E05A10] hover:to-[#D94E1B] active:scale-[0.99] text-white font-bold text-xs tracking-wide uppercase rounded-xl transition-all shadow-[0_4px_14px_rgba(241,90,36,0.35)] hover:shadow-[0_6px_20px_rgba(241,90,36,0.45)] hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {loading ? (
                   <span className="inline-flex items-center gap-2">
@@ -181,14 +181,14 @@ export const Login: React.FC = () => {
                   <p className="text-[10px] text-slate-500">User ID, Reset Password & Hak Akses</p>
                 </div>
                 <div className="space-y-2 text-[11px]">
-                  <a href="tel:02150836555" className="flex items-center gap-2 text-slate-600 hover:text-[#005E5D] transition-colors group">
-                    <div className="p-1 rounded-md bg-teal-50 text-[#005E5D] group-hover:bg-[#005E5D] group-hover:text-white transition-colors">
+                  <a href="tel:02150836555" className="flex items-center gap-2 text-slate-600 hover:text-[#F15A24] transition-colors group">
+                    <div className="p-1 rounded-md bg-orange-50 text-[#F15A24] group-hover:bg-[#F15A24] group-hover:text-white transition-colors">
                       <Phone className="h-3 w-3" />
                     </div>
                     <span className="font-mono text-xs">021-50836555</span>
                   </a>
-                  <a href="mailto:userid_consumer.RTC@bni.co.id" className="flex items-center gap-2 text-slate-600 hover:text-[#005E5D] transition-colors group">
-                    <div className="p-1 rounded-md bg-teal-50 text-[#005E5D] group-hover:bg-[#005E5D] group-hover:text-white transition-colors">
+                  <a href="mailto:userid_consumer.RTC@bni.co.id" className="flex items-center gap-2 text-slate-600 hover:text-[#F15A24] transition-colors group">
+                    <div className="p-1 rounded-md bg-orange-50 text-[#F15A24] group-hover:bg-[#F15A24] group-hover:text-white transition-colors">
                       <Mail className="h-3 w-3" />
                     </div>
                     <span className="truncate text-[10px]">userid_consumer.RTC@bni.co.id</span>
@@ -209,7 +209,7 @@ export const Login: React.FC = () => {
                   ].map(pic => (
                     <div key={pic.name} className="border-t border-slate-100 pt-2 first:border-0 first:pt-0">
                       <p className="font-semibold text-slate-700 text-[11px] mb-1">{pic.name}</p>
-                      <a href={`tel:${pic.phone.replace(/-/g,'')}`} className="flex items-center gap-1.5 text-slate-500 hover:text-[#005E5D] transition-colors">
+                      <a href={`tel:${pic.phone.replace(/-/g,'')}`} className="flex items-center gap-1.5 text-slate-500 hover:text-[#F15A24] transition-colors">
                         <Phone className="h-3 w-3 text-slate-400 shrink-0" />
                         <span className="font-mono text-[10px]">{pic.phone}</span>
                       </a>

@@ -50,14 +50,14 @@ export const DateField: React.FC<DateFieldProps> = ({
           disabled={disabled}
           value={dayValue}
           onChange={(e) => onDayChange?.(e.target.value)}
-          className="w-12 text-center px-2 py-1.5 border border-gray-300 rounded text-xs bg-white text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#007B7A] focus:border-[#007B7A] disabled:bg-gray-100 disabled:text-gray-400"
+          className="w-12 text-center px-2 py-1.5 border border-gray-300 rounded text-xs bg-white text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#F15A24] focus:border-[#F15A24] disabled:bg-gray-100 disabled:text-gray-400"
         />
         <div className="relative flex-1">
           <select
             disabled={disabled}
             value={monthValue}
             onChange={(e) => onMonthChange?.(e.target.value)}
-            className="w-full px-2 py-1.5 border border-gray-300 rounded text-xs bg-white text-gray-800 appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#007B7A] focus:border-[#007B7A] disabled:bg-gray-100 disabled:text-gray-400"
+            className="w-full px-2 py-1.5 border border-gray-300 rounded text-xs bg-white text-gray-800 appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#F15A24] focus:border-[#F15A24] disabled:bg-gray-100 disabled:text-gray-400"
           >
             <option value="">- Bulan -</option>
             {MONTH_OPTIONS.map((m) => (
@@ -79,7 +79,7 @@ export const DateField: React.FC<DateFieldProps> = ({
           disabled={disabled}
           value={yearValue}
           onChange={(e) => onYearChange?.(e.target.value)}
-          className="w-16 text-center px-2 py-1.5 border border-gray-300 rounded text-xs bg-white text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#007B7A] focus:border-[#007B7A] disabled:bg-gray-100 disabled:text-gray-400"
+          className="w-16 text-center px-2 py-1.5 border border-gray-300 rounded text-xs bg-white text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#F15A24] focus:border-[#F15A24] disabled:bg-gray-100 disabled:text-gray-400"
         />
       </div>
     </FormField>

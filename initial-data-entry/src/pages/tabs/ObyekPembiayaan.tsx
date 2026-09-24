@@ -105,7 +105,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
       ========================================================================= */}
       <div className="bg-white rounded-2xl border border-slate-200/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.07),0_2px_6px_-2px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(0,94,93,0.12)] transition-all duration-300 overflow-hidden">
         {/* Header Bar */}
-        <div className="bg-gradient-to-r from-[#005E5D] via-[#007876] to-[#005E5D] text-white font-extrabold text-center py-2.5 text-xs tracking-widest uppercase shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.15)] flex items-center justify-center gap-2">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] text-white font-extrabold text-center py-2.5 text-xs tracking-widest uppercase shadow-[inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-2px_4px_rgba(0,0,0,0.15)] flex items-center justify-center gap-2">
           {getHeaderTitle()}
         </div>
 
@@ -115,7 +115,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#cce8e8]">
               {/* Kolom Kiri: Pilihan Kategori & Tipe Jaminan */}
               <div>
-                <table className="w-full text-[11px]">
+                <div className="overflow-x-auto w-full"><table className="w-full text-[11px]">
                   <tbody>
                     <tr className="border-b border-[#e5f2f2]">
                       <td className="w-48 text-right pr-2 py-1 font-normal text-gray-700 whitespace-nowrap">
@@ -125,7 +125,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.kategoriPembiayaan || ''}
                           onChange={(e) => onChange('kategoriPembiayaan', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           <option value="">- SELECT -</option>
                           <option value="Baru">Baru</option>
@@ -144,7 +144,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.tipeJaminan || ''}
                           onChange={(e) => onChange('tipeJaminan', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           <option value="">- SELECT -</option>
                           <option value="Tanah">Tanah</option>
@@ -165,7 +165,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.namaSalesDeveloper || ''}
                           onChange={(e) => onChange('namaSalesDeveloper', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
@@ -179,12 +179,12 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.noKtpSalesDeveloper || ''}
                           onChange={(e) => onChange('noKtpSalesDeveloper', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
                   </tbody>
-                </table>
+                </table></div>
               </div>
 
               {/* Kolom Kanan: Kosong sebelum memilih objek */}
@@ -197,7 +197,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#cce8e8]">
               {/* Kolom Kiri */}
               <div>
-                <table className="w-full text-[11px]">
+                <div className="overflow-x-auto w-full"><table className="w-full text-[11px]">
                   <tbody>
                     <tr className="border-b border-[#e5f2f2]">
                       <td className="w-48 text-right pr-2 py-1 font-normal text-gray-700 whitespace-nowrap">
@@ -207,7 +207,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.kategoriPembiayaan || ''}
                           onChange={(e) => onChange('kategoriPembiayaan', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           <option value="">- SELECT -</option>
                           <option value="Baru">Baru</option>
@@ -226,7 +226,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.tipeJaminan || ''}
                           onChange={(e) => onChange('tipeJaminan', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           <option value="">- SELECT -</option>
                           <option value="Tanah">Tanah</option>
@@ -246,7 +246,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.tipeSubJaminan || ''}
                           onChange={(e) => onChange('tipeSubJaminan', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           {getSubTipeOptions().map((opt) => (
                             <option key={opt.value} value={opt.value}>
@@ -300,7 +300,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.statusIndent || 'NON-INDEN'}
                           onChange={(e) => onChange('statusIndent', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           <option value="NON-INDEN">NON-INDEN</option>
                           <option value="INDEN">INDEN</option>
@@ -314,7 +314,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.area || 'JAKARTA'}
                           onChange={(e) => onChange('area', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           <option value="JAKARTA">JAKARTA</option>
                           <option value="SERANG">SERANG</option>
@@ -336,7 +336,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                               type="text"
                               value={colForm?.developer || ''}
                               onChange={(e) => onChange('developer', e.target.value)}
-                              className="w-full max-w-[260px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                              className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                             />
                           </td>
                         </tr>
@@ -350,12 +350,12 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                                 type="text"
                                 value={colForm?.proyek || ''}
                                 onChange={(e) => onChange('proyek', e.target.value)}
-                                className="w-full max-w-[200px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                                className="w-full max-w-[200px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                               />
                               <button
                                 type="button"
                                 onClick={handleCariProyek}
-                                className="h-[22px] px-2 bg-gray-100 hover:bg-gray-200 border border-gray-400 text-[11px] font-medium rounded-xs"
+                                className="h-[22px] px-2 bg-gray-100 hover:bg-gray-200 border border-slate-300 rounded text-[11px] font-medium rounded-xs"
                               >
                                 Cari
                               </button>
@@ -371,7 +371,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                             type="text"
                             value={colForm?.umum || ''}
                             onChange={(e) => onChange('umum', e.target.value)}
-                            className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                            className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                           />
                         </td>
                       </tr>
@@ -386,7 +386,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.namaSalesDeveloper || ''}
                           onChange={(e) => onChange('namaSalesDeveloper', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
@@ -400,7 +400,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.noKtpSalesDeveloper || ''}
                           onChange={(e) => onChange('noKtpSalesDeveloper', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
@@ -413,7 +413,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.salesDevPihak3 || ''}
                           onChange={(e) => onChange('salesDevPihak3', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           <option value="">--SELECT--</option>
                           <option value="PT CIPUTRA PROPERTY">PT CIPUTRA PROPERTY</option>
@@ -430,7 +430,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.tipeProperti || 'TANAH/KAVLING'}
                           onChange={(e) => onChange('tipeProperti', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           <option value="TANAH/KAVLING">TANAH/KAVLING</option>
                           <option value="RUMAH TINGGAL">RUMAH TINGGAL</option>
@@ -486,7 +486,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.agenProperti || ''}
                           onChange={(e) => onChange('agenProperti', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
@@ -499,7 +499,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.salesAgenPihak3 || ''}
                           onChange={(e) => onChange('salesAgenPihak3', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           <option value="">--SELECT-- (Pilih area terlebih dahulu)</option>
                           <option value="ERA INDONESIA">ERA INDONESIA</option>
@@ -526,19 +526,19 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.alamat1 || ''}
                           onChange={(e) => onChange('alamat1', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                         <input
                           type="text"
                           value={colForm?.alamat2 || ''}
                           onChange={(e) => onChange('alamat2', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                         <input
                           type="text"
                           value={colForm?.alamat3 || ''}
                           onChange={(e) => onChange('alamat3', e.target.value)}
-                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
@@ -554,7 +554,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                             maxLength={3}
                             value={colForm?.rt || ''}
                             onChange={(e) => onChange('rt', e.target.value)}
-                            className="w-12 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs text-center focus:outline-none focus:ring-1 focus:ring-teal-500"
+                            className="w-12 h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs text-center focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                           />
                           <span>/</span>
                           <input
@@ -562,7 +562,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                             maxLength={3}
                             value={colForm?.rw || ''}
                             onChange={(e) => onChange('rw', e.target.value)}
-                            className="w-12 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs text-center focus:outline-none focus:ring-1 focus:ring-teal-500"
+                            className="w-12 h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs text-center focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                           />
                         </div>
                       </td>
@@ -577,12 +577,12 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                             maxLength={5}
                             value={colForm?.kodepos || ''}
                             onChange={(e) => onChange('kodepos', e.target.value)}
-                            className="w-20 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                            className="w-20 h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                           />
                           <button
                             type="button"
                             onClick={handleCariZip}
-                            className="h-[22px] px-2 bg-gray-100 hover:bg-gray-200 border border-gray-400 text-[11px] font-medium rounded-xs"
+                            className="h-[22px] px-2 bg-gray-100 hover:bg-gray-200 border border-slate-300 rounded text-[11px] font-medium rounded-xs"
                           >
                             Cari
                           </button>
@@ -590,12 +590,12 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                       </td>
                     </tr>
                   </tbody>
-                </table>
+                </table></div>
               </div>
 
               {/* Kolom Kanan: Rincian Fisik & Legalitas Agunan */}
               <div>
-                <table className="w-full text-[11px]">
+                <div className="overflow-x-auto w-full"><table className="w-full text-[11px]">
                   <tbody>
                     <tr className="border-b border-[#e5f2f2]">
                       <td className="w-44 text-right pr-2 py-1 font-normal text-gray-700 whitespace-nowrap">
@@ -607,18 +607,18 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                             type="text"
                             value={colForm?.lokasiAgunanKode || ''}
                             onChange={(e) => onChange('lokasiAgunanKode', e.target.value)}
-                            className="w-14 h-[22px] px-1 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                            className="w-14 h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                           />
                           <input
                             type="text"
                             value={colForm?.lokasiAgunanDesc || ''}
                             onChange={(e) => onChange('lokasiAgunanDesc', e.target.value)}
-                            className="w-44 h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                            className="w-44 h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                           />
                           <button
                             type="button"
                             onClick={handleCariLokasi}
-                            className="h-[22px] px-2 bg-gray-100 hover:bg-gray-200 border border-gray-400 text-[11px] font-medium rounded-xs"
+                            className="h-[22px] px-2 bg-gray-100 hover:bg-gray-200 border border-slate-300 rounded text-[11px] font-medium rounded-xs"
                           >
                             Cari
                           </button>
@@ -636,7 +636,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                             type="text"
                             value={colForm?.luasBangunan || ''}
                             onChange={(e) => onChange('luasBangunan', e.target.value)}
-                            className="w-20 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs text-right focus:outline-none focus:ring-1 focus:ring-teal-500"
+                            className="w-20 h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs text-right focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                           />
                           <span>m2</span>
                         </div>
@@ -653,7 +653,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                             type="text"
                             value={colForm?.luasArea || ''}
                             onChange={(e) => onChange('luasArea', e.target.value)}
-                            className="w-20 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs text-right focus:outline-none focus:ring-1 focus:ring-teal-500"
+                            className="w-20 h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs text-right focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                           />
                           <span>m2</span>
                         </div>
@@ -669,7 +669,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.perkiraanHarga || ''}
                           onChange={(e) => onChange('perkiraanHarga', e.target.value)}
-                          className="w-full max-w-[200px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs text-right focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[200px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs text-right focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
@@ -684,18 +684,18 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                             type="text"
                             value={colForm?.tipeSertifikatKode || ''}
                             onChange={(e) => onChange('tipeSertifikatKode', e.target.value)}
-                            className="w-14 h-[22px] px-1 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                            className="w-14 h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                           />
                           <input
                             type="text"
                             value={colForm?.tipeSertifikatDesc || ''}
                             onChange={(e) => onChange('tipeSertifikatDesc', e.target.value)}
-                            className="w-36 h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                            className="w-36 h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                           />
                           <button
                             type="button"
                             onClick={handleCariSertifikat}
-                            className="h-[22px] px-2 bg-gray-100 hover:bg-gray-200 border border-gray-400 text-[11px] font-medium rounded-xs"
+                            className="h-[22px] px-2 bg-gray-100 hover:bg-gray-200 border border-slate-300 rounded text-[11px] font-medium rounded-xs"
                           >
                             Cari
                           </button>
@@ -712,7 +712,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.noSertifikat || ''}
                           onChange={(e) => onChange('noSertifikat', e.target.value)}
-                          className="w-full max-w-[220px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[220px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
@@ -726,7 +726,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.nomorUnit || ''}
                           onChange={(e) => onChange('nomorUnit', e.target.value)}
-                          className="w-full max-w-[220px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[220px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
@@ -738,7 +738,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.tower || ''}
                           onChange={(e) => onChange('tower', e.target.value)}
-                          className="w-full max-w-[220px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[220px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
@@ -750,7 +750,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                           type="text"
                           value={colForm?.lantai || ''}
                           onChange={(e) => onChange('lantai', e.target.value)}
-                          className="w-full max-w-[220px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[220px] h-[22px] px-1.5 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         />
                       </td>
                     </tr>
@@ -763,7 +763,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                         <select
                           value={colForm?.marketSegment || 'Secondary Market'}
                           onChange={(e) => onChange('marketSegment', e.target.value)}
-                          className="w-full max-w-[220px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                          className="w-full max-w-[220px] h-[22px] px-1 bg-white border border-slate-300 rounded text-xs focus:outline-none focus:ring-1 focus:ring-orange-500/25 focus:border-[#F15A24]"
                         >
                           <option value="Secondary Market">Secondary Market</option>
                           <option value="Primary Market">Primary Market</option>
@@ -771,7 +771,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                       </td>
                     </tr>
                   </tbody>
-                </table>
+                </table></div>
               </div>
             </div>
           )}
@@ -792,7 +792,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
                 <button
                   type="button"
                   onClick={onCancelEdit}
-                  className="px-4 py-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold text-xs border border-gray-400 rounded-xs cursor-pointer"
+                  className="px-4 py-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold text-xs border border-slate-300 rounded rounded-xs cursor-pointer"
                 >
                   Batal
                 </button>
@@ -815,7 +815,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
           (Sesuai DataGrid2 di Collateral.aspx & media_1789443826705.png)
       ========================================================================= */}
       <div className="border border-[#d35400] overflow-hidden bg-white">
-        <table className="w-full text-[11px] border-collapse">
+        <div className="overflow-x-auto w-full"><table className="w-full text-[11px] border-collapse">
           <thead>
             <tr className="bg-[#E05A10] text-white font-bold text-center">
               <th className="py-1 px-3 border-r border-orange-400 text-left font-semibold">Tipe</th>
@@ -863,7 +863,7 @@ export const ObyekPembiayaan: React.FC<ObyekPembiayaanProps> = ({
               ))
             )}
           </tbody>
-        </table>
+        </table></div>
       </div>
 
       {/* =========================================================================

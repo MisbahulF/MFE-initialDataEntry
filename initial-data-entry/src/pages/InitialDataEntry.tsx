@@ -9,6 +9,8 @@ import { PekerjaanPasangan } from './tabs/PekerjaanPasangan';
 import { KontakEmergency } from './tabs/KontakEmergency';
 import { InformasiPerbankan } from './tabs/InformasiPerbankan';
 import { MemoSkdr } from './tabs/MemoSkdr';
+import { SearchZipcodeModal } from '../components/SearchZipcodeModal';
+import { ZipcodeResult } from '../types/ide.types';
 import {
   AlertTriangle,
   Monitor,
@@ -321,6 +323,43 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCheckingBlacklist, setIsCheckingBlacklist] = useState(false);
   const [blacklistResult, setBlacklistResult] = useState<string | null>(null);
+  const [zipModalOpen, setZipModalOpen] = useState(false);
+  const [zipTarget, setZipTarget] = useState<'ktp' | 'tinggal' | 'perusahaan' | 'pasangan' | 'kantorPasangan' | 'emergency' | null>(null);
+
+  const handleSelectZipcode = (z: ZipcodeResult) => {
+    if (zipTarget === 'ktp') {
+      handleChange('kodeposKtp', z.zipcode);
+      handleChange('kelurahanKtp', z.kelurahan);
+      handleChange('kecamatanKtp', z.kecamatan);
+      handleChange('kotaKtp', z.kota);
+    } else if (zipTarget === 'tinggal') {
+      handleChange('kodeposTinggal', z.zipcode);
+      handleChange('kelurahanTinggal', z.kelurahan);
+      handleChange('kecamatanTinggal', z.kecamatan);
+      handleChange('kotaTinggal', z.kota);
+    } else if (zipTarget === 'perusahaan') {
+      handleChange('kodeposPerusahaan', z.zipcode);
+      handleChange('kelurahanPerusahaan', z.kelurahan);
+      handleChange('kecamatanPerusahaan', z.kecamatan);
+      handleChange('kotaPerusahaan', z.kota);
+    } else if (zipTarget === 'pasangan') {
+      handleChange('kodeposPasangan', z.zipcode);
+      handleChange('kelurahanPasangan', z.kelurahan);
+      handleChange('kecamatanPasangan', z.kecamatan);
+      handleChange('kotaPasangan', z.kota);
+    } else if (zipTarget === 'kantorPasangan') {
+      handleChange('kodeposKantorPasangan', z.zipcode);
+      handleChange('kelurahanKantorPasangan', z.kelurahan);
+      handleChange('kecamatanKantorPasangan', z.kecamatan);
+      handleChange('kotaKantorPasangan', z.kota);
+    } else if (zipTarget === 'emergency') {
+      handleChange('kodeposEmergency', z.zipcode);
+      handleChange('kelurahanEmergency', z.kelurahan);
+      handleChange('kecamatanEmergency', z.kecamatan);
+      handleChange('kotaEmergency', z.kota);
+    }
+    setZipModalOpen(false);
+  };
 
   const handleCheckPreScreening = async () => {
     if (!formData?.noProspek || formData.noProspek === 'Auto Generate') {
@@ -341,7 +380,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
       const data = await res.json();
       const status = data?.data?.status || 'PASS';
       setBlacklistResult(status);
-      setFormData((prev: any) => ({ ...prev, statusPrescreening: status }));
+      // statusPrescreening dikosongkan sesuai permintaan (menunggu integrasi dukcapil)
       setSaveSuccess(`Hasil Pre-Screening: ${status} (DHN & SLIK Clear).`);
       setTimeout(() => setSaveSuccess(null), 3500);
     } catch (e) {
@@ -421,7 +460,17 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
         }
       } catch { }
       
-      return { ...createEmptyForm(selectedProspect, user), ...selectedProspect };
+      const empty = createEmptyForm(selectedProspect, user);
+      return {
+        ...empty,
+        ...selectedProspect,
+        groupFasilitas: selectedProspect.groupFasilitas || selectedProspect.productGroupId || selectedProspect.produk || '',
+        fasilitas: selectedProspect.fasilitas || selectedProspect.productId || '',
+        channels: selectedProspect.channels || selectedProspect.sourceLead || selectedProspect.sourceAplikasi || '',
+        namaDepan: selectedProspect.namaDepan || selectedProspect.namaDebitur || selectedProspect.nama || '',
+        noKtp: selectedProspect.noKtp || selectedProspect.noKtpDebitur || selectedProspect.ktp || '',
+        noHandphone: selectedProspect.noHandphone || selectedProspect.noHp || selectedProspect.telp || '',
+      };
     }
     return createEmptyForm(selectedProspect, user);
   });
@@ -740,15 +789,13 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
   };
 
   const handleCariZipKtp = () => {
-    if (formData.kodeposKtp) {
-      handleChange('kotaKtp', 'Petamburan JAKARTA');
-    }
+    setZipTarget('ktp');
+    setZipModalOpen(true);
   };
 
   const handleCariZipTinggal = () => {
-    if (formData.kodeposTinggal) {
-      handleChange('kotaTinggal', 'Petamburan JAKARTA');
-    }
+    setZipTarget('tinggal');
+    setZipModalOpen(true);
   };
 
   const handleSameWithKtp = (checked: boolean) => {
@@ -782,9 +829,8 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
 
   // State & Handlers untuk Tab 4: Pekerjaan Debitur
   const handleCariZipPerusahaan = () => {
-    if (formData.kodeposPerusahaan) {
-      handleChange('kotaPerusahaan', 'Petamburan JAKARTA');
-    }
+    setZipTarget('perusahaan');
+    setZipModalOpen(true);
   };
 
   const handleLanjutTab4 = async (e?: React.FormEvent) => {
@@ -805,9 +851,8 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
 
   // State & Handlers untuk Tab 5: Informasi Pasangan
   const handleCariZipPasangan = () => {
-    if (formData.kodeposPasangan) {
-      handleChange('kotaPasangan', 'Petamburan JAKARTA');
-    }
+    setZipTarget('pasangan');
+    setZipModalOpen(true);
   };
 
   const handleLanjutTab5 = async (e?: React.FormEvent) => {
@@ -828,9 +873,8 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
 
   // State & Handlers untuk Tab 6: Informasi Pekerjaan Pasangan
   const handleCariZipKantorPasangan = () => {
-    if (formData.kodeposKantorPasangan) {
-      handleChange('kotaKantorPasangan', 'Petamburan JAKARTA');
-    }
+    setZipTarget('kantorPasangan');
+    setZipModalOpen(true);
   };
 
   const handleLanjutTab6 = async (e?: React.FormEvent) => {
@@ -851,9 +895,8 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
 
   // State & Handlers untuk Tab 7: Kontak Emergency
   const handleCariZipEmergency = () => {
-    if (formData.kodeposEmergency) {
-      handleChange('kotaEmergency', 'Petamburan JAKARTA');
-    }
+    setZipTarget('emergency');
+    setZipModalOpen(true);
   };
 
   const handleLanjutTab7 = async (e?: React.FormEvent) => {
@@ -1013,32 +1056,79 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
     if (selectedProspect && !selectedProspect.isNew && selectedProspect.noProspek) {
       setHasSavedProspect(true);
       setIsSubmitting(true);
-      // Fetch data aplikasi asli langsung dari database SQLite backend
+
+      // 1. Ambil data tersimpan dari local storage jika ada sebagai fallback/pelengkap terlengkap
+      let localSaved: any = {};
+      try {
+        const s = window.localStorage.getItem('bni_ide_forms');
+        if (s) {
+          const f = JSON.parse(s);
+          if (f[selectedProspect.noProspek]) localSaved = f[selectedProspect.noProspek];
+        }
+      } catch { }
+
+      // 2. Fetch data aplikasi asli langsung dari database SQLite backend
       fetch(`http://localhost:5139/api/DataEntry/applications/${encodeURIComponent(selectedProspect.noProspek)}`)
         .then(res => (res.ok ? res.json() : null))
         .then(appData => {
           setIsSubmitting(false);
-          const dbData = appData?.data || selectedProspect.data || selectedProspect;
-          if (dbData) {
-            setFormData({
-              ...createEmptyForm(selectedProspect, user),
-              ...dbData,
-              noProspek: selectedProspect.noProspek,
-            });
-            if (dbData.collaterals) setCollaterals(dbData.collaterals);
-            if (dbData.documents) setDocuments(dbData.documents);
-            if (dbData.bankAccounts) setBankAccounts(dbData.bankAccounts);
-            if (dbData.otherLoans) setOtherLoans(dbData.otherLoans);
-            if (dbData.creditCards) setCreditCards(dbData.creditCards);
-            if (dbData.memoList) setMemoList(dbData.memoList);
-            if (dbData.skdrList) setSkdrList(dbData.skdrList);
-          }
+          const rawDbData = appData?.data || selectedProspect.data || selectedProspect || {};
+          
+          const normalized = {
+            ...createEmptyForm(selectedProspect, user),
+            ...localSaved,
+            ...rawDbData,
+            groupFasilitas: rawDbData.groupFasilitas || rawDbData.productGroupId || appData?.produk || selectedProspect?.produk || localSaved.groupFasilitas || '',
+            fasilitas: rawDbData.fasilitas || rawDbData.productId || selectedProspect?.fasilitas || localSaved.fasilitas || '',
+            kodeProgram: rawDbData.kodeProgram || rawDbData.program || localSaved.kodeProgram || '',
+            tujuanPembiayaan: rawDbData.tujuanPembiayaan || localSaved.tujuanPembiayaan || '',
+            maksimumKredit: rawDbData.maksimumKredit || rawDbData.cpLoanAmount || localSaved.maksimumKredit || '',
+            jangkaWaktu: rawDbData.jangkaWaktu || rawDbData.tenor || localSaved.jangkaWaktu || '',
+            channels: rawDbData.channels || rawDbData.sourceLead || rawDbData.chCode || rawDbData.sourceAplikasi || localSaved.channels || '',
+            sourceAplikasi: rawDbData.sourceAplikasi || rawDbData.channels || rawDbData.sourceLead || rawDbData.chCode || localSaved.sourceAplikasi || '',
+            media: rawDbData.media || localSaved.media || '',
+            namaDepan: rawDbData.namaDepan || rawDbData.namaDebitur || appData?.namaDebitur || selectedProspect?.nama || localSaved.namaDepan || '',
+            noKtp: rawDbData.noKtp || rawDbData.noKtpDebitur || appData?.ktp || selectedProspect?.ktp || localSaved.noKtp || '',
+            noHandphone: rawDbData.noHandphone || rawDbData.noHp || selectedProspect?.telp || localSaved.noHandphone || '',
+            namaSales: rawDbData.namaSales || appData?.referal || selectedProspect?.referal || localSaved.namaSales || '',
+            namaCabangPembukuan: rawDbData.namaCabangPembukuan || rawDbData.branchId || appData?.cabang || localSaved.namaCabangPembukuan || 'SERANG',
+            noProspek: selectedProspect.noProspek,
+          };
+
+          setFormData(normalized);
+
+          const cols = rawDbData.collaterals || localSaved.collaterals;
+          if (cols) setCollaterals(cols);
+          const docs = rawDbData.documents || localSaved.documents;
+          if (docs) setDocuments(docs);
+          const bAccs = rawDbData.bankAccounts || localSaved.bankAccounts;
+          if (bAccs) setBankAccounts(bAccs);
+          const oLoans = rawDbData.otherLoans || localSaved.otherLoans;
+          if (oLoans) setOtherLoans(oLoans);
+          const cCards = rawDbData.creditCards || localSaved.creditCards;
+          if (cCards) setCreditCards(cCards);
+          const memos = rawDbData.memoList || localSaved.memoList;
+          if (memos) setMemoList(memos);
+          const skdrs = rawDbData.skdrList || localSaved.skdrList;
+          if (skdrs) setSkdrList(skdrs);
         })
         .catch(err => {
           setIsSubmitting(false);
           console.error('Error fetching application from DB:', err);
-          const fallback = selectedProspect.data || selectedProspect;
-          setFormData({ ...createEmptyForm(selectedProspect, user), ...fallback });
+          const rawDbData = selectedProspect.data || selectedProspect || {};
+          const fallback = {
+            ...createEmptyForm(selectedProspect, user),
+            ...localSaved,
+            ...rawDbData,
+            groupFasilitas: rawDbData.groupFasilitas || rawDbData.productGroupId || selectedProspect?.produk || localSaved.groupFasilitas || '',
+            fasilitas: rawDbData.fasilitas || rawDbData.productId || selectedProspect?.fasilitas || localSaved.fasilitas || '',
+            channels: rawDbData.channels || rawDbData.sourceLead || localSaved.channels || '',
+            namaDepan: rawDbData.namaDepan || selectedProspect?.nama || localSaved.namaDepan || '',
+            noKtp: rawDbData.noKtp || selectedProspect?.ktp || localSaved.noKtp || '',
+            noHandphone: rawDbData.noHandphone || selectedProspect?.telp || localSaved.noHandphone || '',
+            noProspek: selectedProspect.noProspek,
+          };
+          setFormData(fallback);
         });
     } else {
       // INPUT BARU: Form bersih, semua field kosong, 9 tabs tersembunyi
@@ -1078,7 +1168,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
         telp: fd.noHandphone || fd.noTelpNumber || '',
         fasilitas: fd.fasilitas || fd.groupFasilitas || '',
         referal: fd.referal || '',
-        statusPrescreening: fd.statusPrescreening || '',
+        statusPrescreening: '',
         maksKredit: fd.maksimumKredit || '',
         unitPemroses: fd.regionalSales || 'SERANG STA',
       };
@@ -1157,7 +1247,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             coldProspectId: currentFd.noProspek === 'Auto Generate' ? '' : currentFd.noProspek,
-            sourceLead: currentFd.sourceAplikasi || currentFd.sourceLead || 'Cabang',
+            sourceLead: currentFd.channels || currentFd.sourceAplikasi || currentFd.sourceLead || 'Branch',
             productGroupId: currentFd.groupFasilitas || currentFd.produk || '',
             productId: currentFd.fasilitas || '',
             branchId: currentFd.namaCabangPembukuan || currentFd.branchId || '046 - SERANG',
@@ -1170,14 +1260,15 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
             tempatLahir: currentFd.tempatLahir || '',
             tanggalLahir: currentFd.tanggalLahir || '',
             statusKawin: currentFd.statusKawin || currentFd.statusPerkawinan || '',
-            noHp: currentFd.noHp || currentFd.noHandphone || ''
+            noHp: currentFd.noHandphone || currentFd.noHp || ''
           })
         }).catch(err => {
           console.error('Error saving to SourceApplicant:', err);
           return null;
         });
 
-        await Promise.all([appSavePromise, sourcePromise]);
+        await sourcePromise;
+        await appSavePromise;
       } else {
         await appSavePromise;
         if (activeTab === 1 && collaterals.length > 0) {
@@ -1336,7 +1427,17 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
         setIsSubmitting(false);
       }
     } else {
-      handleSendToProcessing();
+      setIsSubmitting(true);
+      try {
+        const effectiveNo = await saveCurrentData();
+        setHasSavedProspect(true);
+        setSaveSuccess(`Seluruh data pengajuan IDE berhasil disimpan (No. Prospek: ${effectiveNo}).`);
+        setTimeout(() => setSaveSuccess(null), 3000);
+      } catch (err) {
+        console.error('Error saving tab data:', err);
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -1487,7 +1588,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
         if (existingP) {
           list = list.map((p: any) =>
             p.noProspek === formData.noProspek
-              ? { ...p, statusPrescreening: 'DIKIRIM KE PROCESSING' }
+              ? { ...p, statusPrescreening: '' }
               : p
           );
         } else {
@@ -1498,7 +1599,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
             telp: formData.noHandphone || formData.noTelpNumber || '',
             fasilitas: formData.fasilitas || 'GRIYA IDAMAN PEMBELIAN RUSUN',
             referal: user?.name || 'SURYA HARJAYA (SC70629)',
-            statusPrescreening: 'DIKIRIM KE PROCESSING',
+            statusPrescreening: '',
             maksKredit: formData.maksimumKredit || formData.maksKredit || '100.000.000',
             unitPemroses: formData.namaCabangPembukuan || 'SERANG STA',
           });
@@ -1564,41 +1665,21 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
             <div className="flex items-center gap-1.5">
               <div className="flex items-center select-none">
                 <span className="text-[#F15A24] font-black text-2xl tracking-tighter mr-1">❖</span>
-                <span className="text-[#005E5D] font-black text-2xl tracking-tight">BNI</span>
+                <span className="text-[#F15A24] font-black text-2xl tracking-tight">BNI</span>
               </div>
             </div>
             {/* Box Badge Judul (Sesuai Screenshot Asli) */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-gradient-to-r from-emerald-50 to-teal-50 border border-teal-200/80 text-[#005E5D] rounded-xl text-xs font-bold shadow-xs w-max">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-orange-50 border border-orange-200 text-[#F15A24] rounded-xl text-xs font-bold shadow-xs w-max">
               Initial Data Entry : {CUBES_SUBMENUS[activeTab]?.label || 'Informasi Source Aplikasi'}
               {formData.noProspek && formData.noProspek !== 'Auto Generate' ? (
-                <span className="font-mono text-teal-800 font-bold ml-2">[{formData.noProspek}]</span>
+                <span className="font-mono text-orange-950 font-bold ml-2">[{formData.noProspek}]</span>
               ) : ''}
             </div>
           </div>
 
           {/* Tombol Aksi Kanan (Sesuai Screenshot Asli) */}
           <div className="flex items-center gap-2">
-            {hasSavedProspect && (
-              <button
-                type="button"
-                onClick={handleCheckPreScreening}
-                disabled={isCheckingBlacklist}
-                className="flex items-center gap-1 px-3 py-1 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-2xs shadow-xs transition-colors cursor-pointer"
-              >
-                <ShieldCheck className="h-3.5 w-3.5" />
-                {isCheckingBlacklist ? 'Mengecek...' : (blacklistResult ? `Pre-Screening: ${blacklistResult}` : 'Cek Pre-Screening')}
-              </button>
-            )}
-            {hasSavedProspect && (
-              <button
-                type="button"
-                onClick={handleSendToProcessing}
-                disabled={isSubmitting}
-                className="flex items-center gap-1 px-3 py-1 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-2xs shadow-xs transition-colors cursor-pointer"
-              >
-                <Send className="h-3.5 w-3.5" /> Kirim ke Processing (AIP)
-              </button>
-            )}
+            
             {hasSavedProspect && activeTab > 0 && (
               <button
                 type="button"
@@ -1660,12 +1741,12 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
                   {/* Header Stepper Sidebar */}
                   <div className="px-1 pb-3 border-b border-slate-100 flex items-center justify-between">
                     <div>
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200/80">
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-orange-900 bg-orange-50 px-2.5 py-0.5 rounded-full border border-orange-200">
                         Tahapan IDE
                       </span>
                       <h3 className="text-xs font-bold text-slate-800 mt-1">Alur Formulir</h3>
                     </div>
-                    <span className="text-[11px] font-bold text-[#005E5D] font-mono bg-teal-50/70 px-2.5 py-1 rounded-xl border border-teal-200/70">
+                    <span className="text-[11px] font-bold text-[#F15A24] font-mono bg-orange-50 px-2.5 py-1 rounded-xl border border-orange-200">
                       {activeTab + 1} / {CUBES_SUBMENUS.length}
                     </span>
                   </div>
@@ -1678,14 +1759,47 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
                     </div>
                     <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
                       <div
-                        className="bg-gradient-to-r from-[#005E5D] via-teal-500 to-emerald-500 h-full transition-all duration-300 rounded-full"
+                        className="bg-gradient-to-r from-[#F15A24] via-orange-500 to-amber-500 h-full transition-all duration-300 rounded-full"
                         style={{ width: `${((activeTab + 1) / CUBES_SUBMENUS.length) * 100}%` }}
                       />
                     </div>
                   </div>
 
                   {/* 9 Step Items Vertikal */}
-                  <nav className="space-y-1.5 text-xs">
+                  {/* Mobile Horizontal Scrollable Stepper (< lg) */}
+                  <div className="flex lg:hidden overflow-x-auto gap-2 pb-2 pt-1 no-scrollbar">
+                    {CUBES_SUBMENUS.map((sub, idx) => {
+                      const isActive = activeTab === idx;
+                      const isPassed = idx < activeTab;
+                      return (
+                        <button
+                          key={sub.id}
+                          type="button"
+                          onClick={async () => {
+                            await saveCurrentData();
+                            setActiveTab(idx);
+                            setSaveSuccess(null);
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }}
+                          className={`shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+                            isActive
+                              ? "bg-gradient-to-r from-[#F15A24] to-[#E05A10] text-white shadow-sm"
+                              : isPassed
+                              ? "bg-orange-50 text-orange-900 border border-orange-200"
+                              : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                          }`}
+                        >
+                          <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold ${isActive ? 'bg-white text-[#F15A24]' : isPassed ? 'bg-orange-500 text-white' : 'bg-slate-300 text-slate-700'}`}>
+                            {isPassed ? "✓" : idx + 1}
+                          </span>
+                          <span>{sub.label}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Desktop 9 Step Items Vertikal (lg:block, hidden on mobile) */}
+                  <nav className="hidden lg:block space-y-1.5 text-xs">
                     {CUBES_SUBMENUS.map((sub, idx) => {
                       const isActive = activeTab === idx;
                       const isPassed = idx < activeTab;
@@ -1702,9 +1816,9 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
                           }}
                           className={`w-full text-left px-3.5 py-2.5 rounded-xl transition-all duration-200 flex items-center justify-between gap-3 cursor-pointer group ${
                             isActive
-                              ? "bg-gradient-to-r from-[#005E5D] to-[#004a49] text-white font-bold shadow-[0_4px_16px_rgba(0,94,93,0.35)] -translate-y-0.5"
+                              ? "bg-gradient-to-r from-[#F15A24] to-[#E05A10] text-white font-bold shadow-[0_4px_16px_rgba(241,90,36,0.35)] -translate-y-0.5"
                               : isPassed
-                              ? "bg-emerald-50/70 hover:bg-emerald-100/80 text-emerald-950 font-semibold border border-emerald-200/60"
+                              ? "bg-orange-50/70 hover:bg-orange-100/80 text-orange-950 font-semibold border border-orange-200/60"
                               : "hover:bg-slate-100/80 text-slate-700 font-medium border border-transparent"
                           }`}
                         >
@@ -1712,9 +1826,9 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
                             <span
                               className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-extrabold shrink-0 transition-all ${
                                 isActive
-                                  ? "bg-white text-[#005E5D] shadow-xs"
+                                  ? "bg-white text-[#F15A24] shadow-xs"
                                   : isPassed
-                                  ? "bg-emerald-500 text-white shadow-xs"
+                                  ? "bg-orange-500 text-white shadow-xs"
                                   : "bg-slate-200 text-slate-600 group-hover:bg-slate-300"
                               }`}
                             >
@@ -1737,7 +1851,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
                   {formData.noProspek && formData.noProspek !== "Auto Generate" && (
                     <div className="pt-3 border-t border-slate-100 px-1 text-[11px] text-slate-500 flex items-center justify-between">
                       <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400">No. Prospek:</span>
-                      <span className="font-mono font-bold text-teal-900 bg-teal-50 px-2 py-0.5 rounded-md border border-teal-200/60">
+                      <span className="font-mono font-bold text-orange-950 bg-orange-50 px-2 py-0.5 rounded-md border border-orange-200/60">
                         {formData.noProspek}
                       </span>
                     </div>
@@ -1921,7 +2035,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500">No. Aplikasi (DE):</span>
-                    <strong className="text-teal-700">{submittedAppModal.noAplikasi}</strong>
+                    <strong className="text-[#F15A24]">{submittedAppModal.noAplikasi}</strong>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500">Status Baru:</span>
@@ -1952,7 +2066,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
                       window.history.pushState(null, '', `/data-entry?appNo=${targetAppNo}`);
                       window.dispatchEvent(new PopStateEvent('popstate'));
                     }}
-                    className="px-4 py-2 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-bold cursor-pointer flex items-center gap-1.5 shadow-sm"
+                    className="px-4 py-2 rounded-xl bg-[#F15A24] hover:bg-[#D94E1B] text-white font-bold cursor-pointer flex items-center gap-1.5 shadow-sm"
                   >
                     <span>Buka Detail Data Entry</span>
                     <ArrowRight className="h-3.5 w-3.5" />

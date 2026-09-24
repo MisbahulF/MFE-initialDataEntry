@@ -81,8 +81,8 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
   return (
     <div className="space-y-4 animate-fade-in text-xs">
       {/* 1. INFORMASI DEBITUR */}
-      <div className="bg-white border border-[#007b83] rounded-xl shadow-sm overflow-hidden">
-        <div className="bg-gradient-to-r from-teal-700 via-[#007b83] to-teal-800 px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center shadow-2xs">
+      <div className="bg-white border border-orange-300/70 rounded-xl shadow-sm overflow-hidden">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center shadow-2xs">
           INFORMASI DEBITUR
         </div>
 
@@ -121,7 +121,7 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
             <TextField label="Nama Ibu Kandung" required value={formData?.namaIbuKandung || ''} onChange={(e) => onChange('namaIbuKandung', e.target.value)} placeholder="Nama lengkap ibu kandung" />
             <TextField label="Hubungan dgn BNI (Thn)" value={formData?.hubunganBniTahun || ''} onChange={(e) => onChange('hubunganBniTahun', e.target.value)} placeholder="Contoh: 5" />
             <div className="pt-2 border-t border-gray-200">
-              <div className="font-bold text-teal-800 pb-1 uppercase tracking-wide text-[11px]">Alamat KTP</div>
+              <div className="font-bold text-orange-900 pb-1 uppercase tracking-wide text-[11px]">Alamat KTP</div>
               <TextField label="Alamat KTP" required value={formData?.alamatKtp || ''} onChange={(e) => onChange('alamatKtp', e.target.value)} placeholder="Jalan, RT/RW, No. Rumah" />
               <div className="grid grid-cols-2 gap-3 mt-2">
                 <TextField label="Kelurahan" value={formData?.kelurahanKtp || ''} onChange={(e) => onChange('kelurahanKtp', e.target.value)} placeholder="Kelurahan" />
@@ -135,13 +135,13 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
                 <div className="flex-1">
                   <TextField label="Kodepos" required maxLength={10} value={formData?.kodeposKtp || ''} onChange={(e) => onChange('kodeposKtp', e.target.value)} placeholder="10260" />
                 </div>
-                <button type="button" onClick={handleCariKtp} className="px-3 py-1.5 bg-[#007b83] hover:bg-teal-800 text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0 mb-0.5">Cari</button>
+                <button type="button" onClick={handleCariKtp} className="px-3 py-1.5 bg-[#F15A24] hover:bg-[#D94E1B] text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0 mb-0.5">Cari</button>
               </div>
               <TextField label="Kota" disabled value={formData?.kotaKtp || ''} onChange={(e) => onChange('kotaKtp', e.target.value)} placeholder="Kota otomatis" />
             </div>
             <div className="pt-2 border-t border-gray-200">
               <div className="flex items-center justify-between pb-1">
-                <span className="font-bold text-teal-800 uppercase tracking-wide text-[11px]">Alamat Tinggal</span>
+                <span className="font-bold text-orange-900 uppercase tracking-wide text-[11px]">Alamat Tinggal</span>
                 <CheckboxField label="Sama dengan KTP" onChange={(e) => handleSameWithKtp(e.target.checked)} />
               </div>
               <TextField label="Alamat Tinggal" value={formData?.alamatTinggal || ''} onChange={(e) => onChange('alamatTinggal', e.target.value)} placeholder="Jalan, RT/RW, No. Rumah" />
@@ -153,7 +153,7 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
                 <div className="flex-1">
                   <TextField label="Kodepos" maxLength={10} value={formData?.kodeposTinggal || ''} onChange={(e) => onChange('kodeposTinggal', e.target.value)} placeholder="10260" />
                 </div>
-                <button type="button" onClick={handleCariTinggal} className="px-3 py-1.5 bg-[#007b83] hover:bg-teal-800 text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0 mb-0.5">Cari</button>
+                <button type="button" onClick={handleCariTinggal} className="px-3 py-1.5 bg-[#F15A24] hover:bg-[#D94E1B] text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0 mb-0.5">Cari</button>
               </div>
               <TextField label="Kota" disabled value={formData?.kotaTinggal || ''} onChange={(e) => onChange('kotaTinggal', e.target.value)} placeholder="Kota otomatis" />
             </div>
@@ -196,10 +196,10 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
       </div>
 
       {/* 2. DOCUMENTS - CHECKLIST EDD RESMI BNI eLO */}
-      <div className="bg-white border border-[#007b83] rounded-xl shadow-sm overflow-hidden">
-        <div className="bg-gradient-to-r from-teal-700 via-[#007b83] to-teal-800 px-4 py-2 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-between shadow-2xs">
+      <div className="bg-white border border-orange-300/70 rounded-xl shadow-sm overflow-hidden">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] px-4 py-2 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-between shadow-2xs">
           <span>CHECKLIST DOKUMEN WAJIB EDD (INITIAL DATA ENTRY)</span>
-          <span className="text-[10px] bg-teal-900/60 px-2 py-0.5 rounded font-mono">STANDAR eLO BNI</span>
+          <span className="text-[10px] bg-orange-950/60 px-2 py-0.5 rounded font-mono">STANDAR eLO BNI</span>
         </div>
         
         <div className="p-4 space-y-4 bg-[#f8fafb]">
@@ -214,7 +214,7 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
               type="button"
               onClick={() => handleUpload()}
               disabled={!selectedUploadFile}
-              className="px-5 py-2 bg-[#007b83] hover:bg-teal-800 disabled:opacity-50 text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0"
+              className="px-5 py-2 bg-[#F15A24] hover:bg-[#D94E1B] disabled:opacity-50 text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0"
             >
               Upload Lampiran Bebas
             </button>
@@ -222,7 +222,7 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
 
           {/* Checklist Table */}
           <div className="border border-gray-200 bg-white rounded-lg overflow-hidden shadow-xs">
-            <table className="w-full border-collapse text-left text-xs">
+            <div className="overflow-x-auto w-full"><table className="w-full border-collapse text-left text-xs">
               <thead className="bg-[#d35400] text-white font-bold border-b border-[#b33e00]">
                 <tr>
                   <th className="p-2 text-center w-12 border-r border-[#b33e00]">No.</th>
@@ -243,12 +243,12 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
                 ].map((item, idx) => {
                   const uploaded = documents.find((d) => d.docType === item.docType || d.name?.toLowerCase().includes(item.cat.toLowerCase()));
                   return (
-                    <tr key={item.docType} className="hover:bg-[#fffde6]">
+                    <tr key={item.docType} className="hover:bg-white">
                       <td className="p-2 border-r text-center font-mono">{idx + 1}</td>
                       <td className="p-2 border-r font-semibold text-gray-700">{item.cat}</td>
                       <td className="p-2 border-r">
                         <div className="font-medium text-gray-900">{item.name}</div>
-                        {uploaded && <div className="text-[10px] text-teal-700 font-mono mt-0.5">File: {uploaded.name}</div>}
+                        {uploaded && <div className="text-[10px] text-[#F15A24] font-mono mt-0.5">File: {uploaded.name}</div>}
                       </td>
                       <td className="p-2 border-r text-center">
                         {uploaded ? (
@@ -277,7 +277,7 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
                               if (selectedUploadFile) handleUpload(item.docType);
                               else alert('Pilih file terlebih dahulu pada input upload di atas.');
                             }}
-                            className="text-[#007b83] hover:underline font-semibold cursor-pointer text-xs"
+                            className="text-[#F15A24] hover:underline font-semibold cursor-pointer text-xs"
                           >
                             Unggah File
                           </button>
@@ -290,9 +290,9 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
                 {documents
                   .filter((d) => !['KTP_NPWP', 'KK_NIKAH', 'SLIP_GAJI', 'REK_KORAN', 'SERTIFIKAT', 'IMB_PBB'].includes(d.docType))
                   .map((doc, idx) => (
-                    <tr key={doc.id || idx} className="hover:bg-[#fffde6] bg-teal-50/40">
+                    <tr key={doc.id || idx} className="hover:bg-white bg-orange-50/40">
                       <td className="p-2 border-r text-center font-mono">7+</td>
-                      <td className="p-2 border-r font-semibold text-teal-800">Lampiran Lain</td>
+                      <td className="p-2 border-r font-semibold text-orange-900">Lampiran Lain</td>
                       <td className="p-2 border-r font-medium text-gray-900">{doc.name}</td>
                       <td className="p-2 border-r text-center">
                         <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-800 border border-green-300">
@@ -311,7 +311,7 @@ export const InformasiDebitur: React.FC<InformasiDebiturProps> = ({
                     </tr>
                   ))}
               </tbody>
-            </table>
+            </table></div>
           </div>
         </div>
       </div>

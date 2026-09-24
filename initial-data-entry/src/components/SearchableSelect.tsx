@@ -53,13 +53,13 @@ export const SearchableSelect: React.FC<SearchableSelectProps> = ({
   );
 
   return (
-    <div ref={wrapperRef} className="relative w-full max-w-[260px] inline-block font-sans text-xs">
+    <div ref={wrapperRef} className="relative w-full w-full max-w-full sm:max-w-[280px] inline-block font-sans text-xs">
       {/* Box Tampilan Input */}
       <div
-        className={`flex items-center justify-between border border-amber-300/80 h-[28px] px-2.5 rounded-lg transition-all shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus-within:border-[#007B83] focus-within:ring-2 focus-within:ring-teal-500/25 ${
+        className={`flex items-center justify-between border border-slate-300 h-[28px] px-2.5 rounded-lg transition-all shadow-xs focus-within:border-[#F15A24] focus-within:ring-2 focus-within:ring-orange-500/20 ${
           disabled
             ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-            : 'bg-[#fffde6] cursor-pointer focus-within:ring-1 focus-within:ring-teal-500'
+            : 'bg-white cursor-pointer hover:border-slate-400 focus-within:ring-1 focus-within:ring-orange-500/25'
         } ${className}`}
         onClick={() => {
           if (!disabled) setIsOpen((prev) => !prev);
@@ -101,7 +101,7 @@ export const SearchableSelect: React.FC<SearchableSelectProps> = ({
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Ketik untuk mencari..."
-              className="w-full h-[28px] px-2.5 bg-white border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] rounded-lg"
+              className="w-full h-[28px] px-2.5 bg-white border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />
           </div>
@@ -114,8 +114,8 @@ export const SearchableSelect: React.FC<SearchableSelectProps> = ({
                 onChange('');
                 setIsOpen(false);
               }}
-              className={`px-2 py-1 text-xs cursor-pointer hover:bg-teal-50 text-gray-500 italic ${
-                !value ? 'bg-teal-100/60 font-semibold text-teal-900' : ''
+              className={`px-2 py-1 text-xs cursor-pointer hover:bg-orange-50/70 text-gray-500 italic ${
+                !value ? 'bg-orange-100 font-semibold text-orange-900' : ''
               }`}
             >
               - SELECT -
@@ -129,8 +129,8 @@ export const SearchableSelect: React.FC<SearchableSelectProps> = ({
                     onChange(opt.label);
                     setIsOpen(false);
                   }}
-                  className={`px-2 py-1.5 text-xs cursor-pointer hover:bg-teal-50 text-gray-800 transition-colors ${
-                    value === opt.label ? 'bg-teal-100 font-semibold text-teal-900' : ''
+                  className={`px-2 py-1.5 text-xs cursor-pointer hover:bg-orange-50/70 text-gray-800 transition-colors ${
+                    value === opt.label ? 'bg-orange-100 font-semibold text-orange-900 border-l-2 border-[#F15A24]' : ''
                   }`}
                 >
                   {opt.label}

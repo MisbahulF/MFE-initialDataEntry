@@ -60,7 +60,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen flex flex-col font-sans text-slate-800 antialiased selection:bg-teal-500 selection:text-white">
+    <div className="bg-slate-50 min-h-screen flex flex-col font-sans text-slate-800 antialiased selection:bg-[#F15A24] selection:text-white">
 
       {/* ── TOP GLASS HEADER BAR (3D ELEVATED) ── */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)]">
@@ -68,7 +68,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
           
           {/* Brand Left */}
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-[#005E5D] via-[#006e6d] to-[#004847] flex items-center justify-center shadow-[0_4px_12px_rgba(0,94,93,0.35)] border border-teal-400/30">
+            <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-[#F15A24] via-[#F37021] to-[#E05A10] flex items-center justify-center shadow-[0_4px_12px_rgba(241,90,36,0.3)] border border-orange-400/30">
               <span className="text-white font-black text-xs tracking-tight">BNI</span>
             </div>
             <div className="flex flex-col">
@@ -86,7 +86,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
           {/* User Profile Right */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex items-center gap-2.5 px-3 py-1.5 bg-slate-100/80 border border-slate-200 rounded-xl">
-              <div className="w-7 h-7 rounded-lg bg-[#005E5D]/10 text-[#005E5D] flex items-center justify-center font-bold text-xs">
+              <div className="w-7 h-7 rounded-lg bg-orange-50 text-[#F15A24] flex items-center justify-center font-bold text-xs">
                 <User className="w-4 h-4" />
               </div>
               <div className="flex flex-col text-left">
@@ -121,20 +121,20 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 space-y-8">
 
         {/* ── 3D HERO BANNER: INITIAL DATA ENTRY ACCESS ── */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#005E5D] via-[#006e6d] to-[#004847] text-white p-7 sm:p-9 shadow-[0_14px_35px_-8px_rgba(0,94,93,0.4)] border border-teal-400/20">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] text-white p-7 sm:p-9 shadow-[0_14px_35px_-8px_rgba(241,90,36,0.35)] border border-orange-400/20">
           {/* Ambient 3D spheres */}
           <div className="absolute top-0 right-0 -mr-16 -mt-16 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 -mb-20 w-64 h-64 rounded-full bg-[#E05A10]/25 blur-3xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-teal-100 border border-white/20 shadow-xs">
+              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-white border border-white/20 shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-amber-300" /> Modul Utama Konsumer (PRM)
               </div>
               <h1 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight drop-shadow-xs">
                 Electronic Loan Origination (PROMPT eLO)
               </h1>
-              <p className="text-teal-100/90 text-xs sm:text-sm leading-relaxed">
+              <p className="text-white/90 text-xs sm:text-sm leading-relaxed">
                 Platform digital terpadu untuk pemrosesan kredit konsumer BNI Griya & Fleksi. Registrasi draf baru, simulasi angsuran, verifikasi data debitur, dan integrasi otomatis.
               </p>
             </div>
@@ -143,7 +143,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
               <button
                 type="button"
                 onClick={() => onNavigate('list')}
-                className="inline-flex items-center justify-center gap-2.5 bg-[#E05A10] hover:bg-[#c94f0c] text-white px-7 py-3.5 rounded-2xl font-bold text-xs uppercase tracking-wider shadow-[0_6px_20px_rgba(224,90,16,0.4)] hover:shadow-[0_8px_26px_rgba(224,90,16,0.55)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 bg-white text-[#F15A24] hover:bg-orange-50 px-7 py-3.5 rounded-2xl font-black text-xs uppercase tracking-wider shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_26px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all cursor-pointer"
               >
                 <FilePlus className="w-4 h-4" />
                 <span>Mulai Input IDE (Baru)</span>
@@ -157,7 +157,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
         <div className="bg-white rounded-3xl border border-slate-200/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] p-6 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-teal-50 text-[#005E5D] flex items-center justify-center font-bold">
+              <div className="w-8 h-8 rounded-xl bg-orange-50 text-[#F15A24] flex items-center justify-center font-bold">
                 <Layers className="w-4 h-4" />
               </div>
               <div>
@@ -165,7 +165,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
                 <p className="text-[11px] text-slate-500">Pilih jenis produk konsumer untuk informasi dan simulasi perhitungan</p>
               </div>
             </div>
-            <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200/70 w-max">
+            <span className="text-[10px] font-extrabold uppercase tracking-wider text-orange-950 bg-orange-50 px-2.5 py-1 rounded-full border border-orange-200 w-max">
               5 Produk Konsumer
             </span>
           </div>
@@ -178,20 +178,20 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
                   key={p.id}
                   type="button"
                   onClick={() => onNavigate('list')}
-                  className="p-4 rounded-2xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50/60 hover:from-teal-50/40 hover:to-white hover:border-[#005E5D]/40 shadow-2xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 text-left flex flex-col justify-between group cursor-pointer"
+                  className="p-4 rounded-2xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50/60 hover:from-orange-50/40 hover:to-white hover:border-[#F15A24]/40 shadow-2xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 text-left flex flex-col justify-between group cursor-pointer"
                 >
                   <div className="space-y-2">
-                    <div className="w-10 h-10 rounded-xl bg-teal-50 group-hover:bg-[#005E5D] text-[#005E5D] group-hover:text-white flex items-center justify-center transition-colors shadow-2xs">
+                    <div className="w-10 h-10 rounded-xl bg-orange-50 group-hover:bg-[#F15A24] text-[#F15A24] group-hover:text-white flex items-center justify-center transition-colors shadow-2xs">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="block text-xs font-bold text-slate-800 group-hover:text-[#005E5D] transition-colors">
+                    <span className="block text-xs font-bold text-slate-800 group-hover:text-[#F15A24] transition-colors">
                       {p.label}
                     </span>
                     <p className="text-[10px] text-slate-500 line-clamp-2 leading-relaxed">
                       {p.desc}
                     </p>
                   </div>
-                  <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-semibold text-[#005E5D]">
+                  <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-semibold text-[#F15A24]">
                     <span>Simulasi</span>
                     <ArrowRight className="w-3 h-3 transform group-hover:translate-x-0.5 transition-transform" />
                   </div>
@@ -233,7 +233,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
                   }}
                   className={`px-3.5 py-1.5 text-xs font-bold rounded-lg transition-all cursor-pointer ${
                     cat === c
-                      ? 'bg-white text-[#005E5D] shadow-xs scale-[1.02]'
+                      ? 'bg-white text-[#F15A24] shadow-xs scale-[1.02]'
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
@@ -257,7 +257,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
                   className={`relative p-4 rounded-2xl border transition-all duration-200 flex flex-col items-center justify-between text-center group cursor-pointer ${
                     isInput
                       ? 'bg-gradient-to-b from-orange-50/60 to-white border-orange-200/90 shadow-[0_4px_16px_rgba(224,90,16,0.15)] hover:shadow-[0_12px_28px_rgba(224,90,16,0.25)] hover:-translate-y-1.5'
-                      : 'bg-gradient-to-b from-white to-slate-50/70 border-slate-200/80 shadow-2xs hover:shadow-lg hover:-translate-y-1.5 hover:border-teal-500/40'
+                      : 'bg-gradient-to-b from-white to-slate-50/70 border-slate-200/80 shadow-2xs hover:shadow-lg hover:-translate-y-1.5 hover:border-orange-500/40'
                   }`}
                 >
                   {isInput && (
@@ -270,13 +270,13 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-200 shadow-sm group-hover:scale-110 mb-3 ${
                     isInput
                       ? 'bg-gradient-to-br from-[#E05A10] to-[#f97316] text-white shadow-[0_4px_14px_rgba(224,90,16,0.4)]'
-                      : 'bg-gradient-to-br from-teal-500 to-[#005E5D] text-white shadow-[0_4px_12px_rgba(0,94,93,0.3)]'
+                      : 'bg-gradient-to-br from-[#F15A24] to-[#E05A10] text-white shadow-[0_4px_12px_rgba(241,90,36,0.3)]'
                   }`}>
                     <Icon className="w-6 h-6 drop-shadow-xs" />
                   </div>
 
                   <div className="space-y-1 w-full">
-                    <span className="block text-xs font-bold text-slate-800 group-hover:text-[#005E5D] transition-colors leading-tight">
+                    <span className="block text-xs font-bold text-slate-800 group-hover:text-[#F15A24] transition-colors leading-tight">
                       {f.label}
                     </span>
                     <span className="block text-[10px] text-slate-400 font-medium">
@@ -293,7 +293,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
         {/* ── HELPDESK & SUPPORT BANNER ── */}
         <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/80 p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600 shadow-2xs">
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-xl bg-teal-50 text-[#005E5D]">
+            <div className="p-2 rounded-xl bg-orange-50 text-[#F15A24]">
               <PhoneIcon className="w-4 h-4" />
             </div>
             <div>
@@ -309,12 +309,12 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
       </main>
 
       {/* ── 3D FOOTER STATUS BAR ── */}
-      <footer className="bg-gradient-to-r from-[#004847] via-[#005E5D] to-[#004847] text-teal-100 text-[11px] font-mono px-6 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] border-t border-teal-600/30">
+      <footer className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white text-[11px] font-mono px-6 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] border-t border-slate-800">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-400" />
           <span>ID USER: <strong className="text-white">{userCode}</strong> &bull; NAMA: <strong className="text-white">{userName}</strong> &bull; CABANG: <strong className="text-white">{userBranch}</strong></span>
         </div>
-        <div className="text-[10px] text-teal-200/80">
+        <div className="text-[10px] text-slate-300">
           Login Since: {loginTime} &nbsp;|&nbsp; Host: {ipAddress}
         </div>
       </footer>
@@ -323,7 +323,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
       {showPwdModal && (
         <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
           <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 w-full max-w-sm overflow-hidden animate-scale-up">
-            <div className="bg-gradient-to-r from-[#005E5D] to-[#004847] px-6 py-4 flex items-center justify-between text-white">
+            <div className="bg-gradient-to-r from-[#F15A24] to-[#E05A10] px-6 py-4 flex items-center justify-between text-white">
               <h3 className="font-bold text-sm">Ubah Password Akun</h3>
               <button
                 type="button"
@@ -345,7 +345,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
                     type="password"
                     value={f.val}
                     onChange={e => f.set(e.target.value)}
-                    className="w-full px-3 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-[#005E5D] focus:bg-white transition-all shadow-xs"
+                    className="w-full px-3 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/25 focus:border-[#F15A24] focus:bg-white transition-all shadow-xs"
                   />
                 </div>
               ))}
@@ -361,7 +361,7 @@ export const MainPrompt: React.FC<MainPromptProps> = ({ onNavigate }) => {
               <button
                 type="button"
                 onClick={() => setShowPwdModal(false)}
-                className="px-5 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-[#005E5D] to-[#004847] rounded-xl shadow-[0_2px_10px_rgba(0,94,93,0.3)] hover:shadow-[0_4px_14px_rgba(0,94,93,0.4)] transition-all cursor-pointer"
+                className="px-5 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-[#F15A24] to-[#E05A10] rounded-xl shadow-[0_2px_10px_rgba(241,90,36,0.3)] hover:shadow-[0_4px_14px_rgba(241,90,36,0.35)] transition-all cursor-pointer"
               >
                 Simpan Password
               </button>

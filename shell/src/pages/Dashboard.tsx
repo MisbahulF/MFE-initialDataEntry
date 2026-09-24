@@ -25,7 +25,7 @@ export const Dashboard: React.FC = () => {
       desc: "Input dan kelola draf permohonan kredit baru (BNI Griya, Fleksi, dsb).",
       href: "/initial-data-entry",
       icon: FileEdit,
-      color: "from-teal-600 to-emerald-700",
+      color: "from-[#F15A24] to-[#E05A10]",
       badge: "Aktif",
       count: "12 Draf",
       highlight: true
@@ -83,7 +83,7 @@ export const Dashboard: React.FC = () => {
         <div className="flex items-center gap-3">
           <Link
             to="/initial-data-entry"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#005E5D] to-[#004847] hover:from-[#004e4d] hover:to-[#003837] active:scale-[0.99] text-white px-5 py-2.5 rounded-xl font-bold text-xs tracking-wide shadow-[0_4px_14px_rgba(0,94,93,0.35)] hover:shadow-[0_6px_20px_rgba(0,94,93,0.45)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#F15A24] to-[#E05A10] hover:from-[#E05A10] hover:to-[#D94E1B] active:scale-[0.99] text-white px-5 py-2.5 rounded-xl font-bold text-xs tracking-wide shadow-[0_4px_14px_rgba(241,90,36,0.3)] hover:shadow-[0_6px_20px_rgba(241,90,36,0.4)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
           >
             <FileEdit className="w-4 h-4" />
             <span>Mulai Input IDE</span>
@@ -92,20 +92,20 @@ export const Dashboard: React.FC = () => {
       </div>
 
       {/* Hero Card: Initial Data Entry 3D Highlight */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#005E5D] via-[#006f6e] to-[#004847] text-white p-7 sm:p-9 shadow-[0_12px_35px_-8px_rgba(0,94,93,0.4)] border border-teal-400/20">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] text-white p-7 sm:p-9 shadow-[0_12px_35px_-8px_rgba(241,90,36,0.35)] border border-orange-400/20">
         {/* Decorative 3D Spheres */}
         <div className="absolute top-0 right-0 -mr-16 -mt-16 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none" />
         <div className="absolute bottom-0 right-1/3 -mb-20 w-60 h-60 rounded-full bg-[#E05A10]/25 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-teal-100 border border-white/20 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-[#f97316]" /> Modul Utama Konsumer (PRM)
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-white border border-white/20 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" /> Modul Utama Konsumer (PRM)
             </div>
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight drop-shadow-xs">
               Initial Data Entry (IDE) &mdash; Griya &amp; Fleksi
             </h2>
-            <p className="text-teal-100/90 text-xs sm:text-sm leading-relaxed">
+            <p className="text-white/90 text-xs sm:text-sm leading-relaxed">
               Formulir pengajuan kredit konsumer baru dengan integrasi otomatis kode pos, validasi field mandatory, dan persistensi database lokal secara instan.
             </p>
           </div>
@@ -113,7 +113,7 @@ export const Dashboard: React.FC = () => {
           <div className="shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
             <Link
               to="/initial-data-entry"
-              className="inline-flex items-center justify-center gap-2 bg-[#E05A10] hover:bg-[#c94f0c] text-white px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-[0_4px_16px_rgba(224,90,16,0.4)] hover:shadow-[0_6px_22px_rgba(224,90,16,0.55)] hover:-translate-y-0.5 active:scale-[0.99] transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2.5 bg-white text-[#F15A24] hover:bg-orange-50 px-7 py-3.5 rounded-2xl font-black text-xs uppercase tracking-wider shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_26px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all cursor-pointer"
             >
               <span>Buka Formulir IDE</span>
               <ArrowRight className="w-4 h-4" />
@@ -126,7 +126,7 @@ export const Dashboard: React.FC = () => {
       <div>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-base font-bold text-slate-800 tracking-tight flex items-center gap-2">
-            <TrendingUp className="w-4 h-4 text-[#005E5D]" /> Alur Pemrosesan Aplikasi Kredit
+            <TrendingUp className="w-4 h-4 text-[#F15A24]" /> Alur Pemrosesan Aplikasi Kredit
           </h2>
           <span className="text-xs text-slate-400 font-normal">Pilih modul untuk navigasi cepat</span>
         </div>
@@ -138,7 +138,7 @@ export const Dashboard: React.FC = () => {
               <Link
                 key={m.title}
                 to={m.href}
-                className="group relative bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-[0_12px_28px_-6px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
+                className="group relative bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs hover:shadow-[0_12px_28px_-6px_rgba(241,90,36,0.12)] hover:border-orange-300 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -150,7 +150,7 @@ export const Dashboard: React.FC = () => {
                     </span>
                   </div>
 
-                  <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#005E5D] transition-colors mb-1.5">
+                  <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#F15A24] transition-colors mb-1.5">
                     {m.title}
                   </h3>
                   <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
@@ -158,7 +158,7 @@ export const Dashboard: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-[#005E5D] font-semibold">
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-[#F15A24] font-semibold">
                   <span>{m.count}</span>
                   <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                 </div>

@@ -33,7 +33,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
           className={`w-full px-3 py-1.5 border rounded text-xs transition-colors focus:outline-none focus:ring-1 ${
             error
               ? 'border-red-400 bg-red-50/20 focus:ring-red-500 focus:border-red-500 text-red-900'
-              : 'border-gray-300 bg-white text-gray-800 focus:ring-[#007B7A] focus:border-[#007B7A]'
+              : 'border-gray-300 bg-white text-gray-800 focus:ring-[#F15A24] focus:border-[#F15A24]'
           } ${disabled ? 'bg-gray-100 text-gray-500 cursor-not-allowed' : ''} ${className}`}
           {...props}
         />

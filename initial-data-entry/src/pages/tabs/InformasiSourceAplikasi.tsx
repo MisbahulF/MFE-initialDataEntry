@@ -427,24 +427,24 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
       {/* =========================================================================
           SECTION 1: PRODUK (3D Modern Elevated Card)
       ========================================================================= */}
-      <div className="bg-white rounded-3xl border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),0_2px_8px_-2px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_-6px_rgba(0,94,93,0.12)] transition-all duration-300 overflow-hidden">
+      <div className="bg-white rounded-3xl border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),0_2px_8px_-2px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_-6px_rgba(241,90,36,0.15)] transition-all duration-300 overflow-hidden">
         {/* 3D Header Bar */}
-        <div className="bg-gradient-to-r from-[#005E5D] via-[#007472] to-[#004a49] text-white px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_6px_rgba(0,0,0,0.15)]">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] text-white px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_6px_rgba(0,0,0,0.15)]">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center text-white border border-white/20 shadow-xs">
-              <Package className="w-4 h-4 text-emerald-300" />
+              <Package className="w-4 h-4 text-white" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-xs sm:text-sm font-black tracking-widest uppercase">PRODUK & FASILITAS KREDIT</h2>
-                <span className="text-[9px] font-extrabold uppercase bg-white/20 text-teal-100 px-2 py-0.5 rounded-full border border-white/20">
+                <span className="text-[9px] font-extrabold uppercase bg-white/20 text-white px-2 py-0.5 rounded-full border border-white/20">
                   Bagian 1
                 </span>
               </div>
-              <p className="text-[10px] text-teal-100/80 font-normal">Pemilihan grup fasilitas kredit, program pembiayaan, dan rekanan pihak ketiga</p>
+              <p className="text-[10px] text-white/80 font-normal">Pemilihan grup fasilitas kredit, program pembiayaan, dan rekanan pihak ketiga</p>
             </div>
           </div>
-          <div className="text-[10px] font-mono font-bold text-teal-100 bg-black/20 px-3 py-1.5 rounded-xl border border-white/10 w-max">
+          <div className="text-[10px] font-mono font-bold text-white bg-black/20 px-3 py-1.5 rounded-xl border border-white/10 w-max">
             Step 1 / 9
           </div>
         </div>
@@ -453,18 +453,18 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
           {/* Kolom Kiri: Produk */}
           <div className="bg-white rounded-2xl border border-slate-200/80 shadow-2xs p-4 sm:p-5">
             <div className="flex items-center gap-2 mb-3 pb-2.5 border-b border-slate-100">
-              <span className="w-2 h-2 rounded-full bg-[#005E5D]" />
+              <span className="w-2 h-2 rounded-full bg-[#F15A24]" />
               <span className="font-bold text-xs text-slate-800 tracking-wide uppercase">Produk & Program Pembiayaan</span>
             </div>
-            <table className="w-full text-[11px]">
+            <div className="overflow-x-auto w-full"><table className="w-full text-[11px]">
               <tbody>
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Group Fasilitas :</td>
                   <td className="p-1.5">
                     <select
                       value={formData?.groupFasilitas || ''}
                       onChange={handleGroupFasilitasChange}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     >
                       <option value="">- SELECT -</option>
                       {groupFasilitasList.map((g: any) => (
@@ -476,7 +476,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Fasilitas :</td>
                   <td className="p-1.5">
                     <SearchableSelect
@@ -492,7 +492,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Kode Program :</td>
                   <td className="p-1.5">
                     <SearchableSelect
@@ -508,13 +508,13 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Tujuan Pembiayaan :</td>
                   <td className="p-1.5">
                     <select
                       value={formData?.tujuanPembiayaan || ''}
                       onChange={(e) => onChange('tujuanPembiayaan', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     >
                       <option value="">- SELECT -</option>
                       {tujuanList.map((t: any) => (
@@ -526,14 +526,14 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Maksimum Kredit :</td>
                   <td className="p-1.5">
                     <input
                       type="text"
                       value={formData?.maksimumKredit || ''}
                       onChange={(e) => handleMaksKreditChange(e.target.value)}
-                      className="w-full max-w-[140px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs text-left focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full max-w-[140px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs text-left focus:outline-none focus:ring-1 focus:ring-orange-500"
                     />
                   </td>
                 </tr>
@@ -546,14 +546,14 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         type="text"
                         value={formData?.jangkaWaktu || ''}
                         onChange={(e) => onChange('jangkaWaktu', e.target.value.replace(/[^0-9]/g, ''))}
-                        className="w-14 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs text-center focus:outline-none focus:ring-1 focus:ring-teal-500"
+                        className="w-14 h-[22px] px-1.5 bg-white border border-gray-400 text-xs text-center focus:outline-none focus:ring-1 focus:ring-orange-500"
                       />
                       <span className="text-gray-600">bulan</span>
                     </div>
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           {/* Kolom Kanan: Pihak Ketiga yang dipilih */}
@@ -562,15 +562,15 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
               <span className="w-2 h-2 rounded-full bg-[#E05A10]" />
               <span className="font-bold text-xs text-slate-800 tracking-wide uppercase">Pihak Ketiga & Rekanan yang Dipilih</span>
             </div>
-            <table className="w-full text-[11px]">
+            <div className="overflow-x-auto w-full"><table className="w-full text-[11px]">
               <tbody>
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Appraisal :</td>
                   <td className="p-1.5">
                     <select
                       value={formData?.appraisal || ''}
                       onChange={(e) => onChange('appraisal', e.target.value)}
-                      className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-orange-500"
                     >
                       <option value="">- SELECT -</option>
                       <option value="INTERNAL BNI">INTERNAL BNI</option>
@@ -581,13 +581,13 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Asuransi Jiwa :</td>
                   <td className="p-1.5">
                     <select
                       value={formData?.asuransiJiwa || ''}
                       onChange={(e) => onChange('asuransiJiwa', e.target.value)}
-                      className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-orange-500"
                     >
                       <option value="">- SELECT -</option>
                       <option value="BNI LIFE INSURANCE">BNI LIFE INSURANCE</option>
@@ -597,13 +597,13 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Notaris :</td>
                   <td className="p-1.5">
                     <select
                       value={formData?.notaris || ''}
                       onChange={(e) => onChange('notaris', e.target.value)}
-                      className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-orange-500"
                     >
                       <option value="">- SELECT -</option>
                       <option value="NOTARIS BUDI SANTOSO, SH, M.KN (SERANG)">NOTARIS BUDI SANTOSO, SH, M.KN (SERANG)</option>
@@ -619,7 +619,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                     <select
                       value={formData?.investigation || ''}
                       onChange={(e) => onChange('investigation', e.target.value)}
-                      className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-orange-500"
                     >
                       <option value="">- SELECT -</option>
                       <option value="INTERNAL INVESTIGATION BNI">INTERNAL INVESTIGATION BNI</option>
@@ -629,7 +629,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </table></div>
           </div>
         </div>
       </div>
@@ -637,9 +637,9 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
       {/* =========================================================================
           SECTION 2: INFORMASI SOURCE APLIKASI (3D Modern Elevated Card)
       ========================================================================= */}
-      <div className="bg-white rounded-3xl border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),0_2px_8px_-2px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_-6px_rgba(0,94,93,0.12)] transition-all duration-300 overflow-hidden">
+      <div className="bg-white rounded-3xl border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),0_2px_8px_-2px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_-6px_rgba(241,90,36,0.15)] transition-all duration-300 overflow-hidden">
         {/* 3D Header Bar */}
-        <div className="bg-gradient-to-r from-[#005E5D] via-[#007472] to-[#004a49] text-white px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_6px_rgba(0,0,0,0.15)]">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] text-white px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_6px_rgba(0,0,0,0.15)]">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center text-white border border-white/20 shadow-xs">
               <FileText className="w-4 h-4 text-amber-300" />
@@ -647,14 +647,14 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-xs sm:text-sm font-black tracking-widest uppercase">INFORMASI SOURCE APLIKASI</h2>
-                <span className="text-[9px] font-extrabold uppercase bg-white/20 text-teal-100 px-2 py-0.5 rounded-full border border-white/20">
+                <span className="text-[9px] font-extrabold uppercase bg-white/20 text-white px-2 py-0.5 rounded-full border border-white/20">
                   Bagian 2
                 </span>
               </div>
-              <p className="text-[10px] text-teal-100/80 font-normal">Data asal permohonan, media promosi, dan unit referensi sales marketing</p>
+              <p className="text-[10px] text-white/80 font-normal">Data asal permohonan, media promosi, dan unit referensi sales marketing</p>
             </div>
           </div>
-          <div className="text-[10px] font-mono font-bold text-teal-100 bg-black/20 px-3 py-1.5 rounded-xl border border-white/10 w-max">
+          <div className="text-[10px] font-mono font-bold text-white bg-black/20 px-3 py-1.5 rounded-xl border border-white/10 w-max">
             No. Prospek: {formData?.noProspek || 'Auto Generate'}
           </div>
         </div>
@@ -663,19 +663,19 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
           {/* Kolom Kiri */}
           <div className="bg-white rounded-2xl border border-slate-200/80 shadow-2xs p-4 sm:p-5">
             <div className="flex items-center gap-2 mb-3 pb-2.5 border-b border-slate-100">
-              <span className="w-2 h-2 rounded-full bg-[#005E5D]" />
+              <span className="w-2 h-2 rounded-full bg-[#F15A24]" />
               <span className="font-bold text-xs text-slate-800 tracking-wide uppercase">Sumber Permohonan & Channels</span>
             </div>
-            <table className="w-full text-[11px]">
+            <div className="overflow-x-auto w-full"><table className="w-full text-[11px]">
               <tbody>
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">No. Prospek :</td>
                   <td className="p-1 font-mono text-xs font-semibold text-gray-800">
                     {formData?.noProspek || 'Auto Generate'}
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Channels :</td>
                   <td className="p-1.5">
                     <select
@@ -684,7 +684,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         onChange('channels', e.target.value);
                         onChange('sourceAplikasi', e.target.value);
                       }}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     >
                       <option value="">- SELECT -</option>
                       {channelList.map((c: any) => (
@@ -696,13 +696,13 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Media :</td>
                   <td className="p-1.5">
                     <select
                       value={formData?.media || ''}
                       onChange={(e) => onChange('media', e.target.value)}
-                      className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full max-w-[260px] h-[22px] px-1 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-orange-500"
                     >
                       <option value="">- SELECT -</option>
                       {mediaList.map((m: any) => (
@@ -714,7 +714,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Regional Sales / Agensi :</td>
                   <td className="p-1.5">
                     <select
@@ -744,7 +744,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           {/* Kolom Kanan */}
@@ -753,30 +753,30 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
               <span className="w-2 h-2 rounded-full bg-[#E05A10]" />
               <span className="font-bold text-xs text-slate-800 tracking-wide uppercase">Unit Penjualan & Referensi Sales</span>
             </div>
-            <table className="w-full text-[11px]">
+            <div className="overflow-x-auto w-full"><table className="w-full text-[11px]">
               <tbody>
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Marketing Org Type :</td>
                   <td className="p-1 text-gray-800 font-medium">
                     {formData?.marketingOrgType || 'STAFF STA'}
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Nama Officer :</td>
                   <td className="p-1 text-gray-800 font-medium">
                     {formData?.namaOfficer || 'SURYA HARJAYA'}
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Sales Point/Cabang/Agensi :</td>
                   <td className="p-1 text-gray-800 font-medium">
                     {formData?.salesPoint || 'SERANG'}
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-44 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Supervisor :</td>
                   <td className="p-1 text-gray-800 font-medium">
                     {formData?.supervisor || ''}
@@ -793,12 +793,12 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         onChange('kodeCabangPembukuan', e.target.value);
                         if (e.target.value === '046') onChange('namaCabangPembukuan', 'SERANG');
                       }}
-                      className="w-16 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-16 h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-orange-500"
                     />
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </table></div>
           </div>
         </div>
       </div>
@@ -806,24 +806,24 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
       {/* =========================================================================
           SECTION 3: INITIAL DATA ENTRY (3D Modern Elevated Card)
       ========================================================================= */}
-      <div className="bg-white rounded-3xl border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),0_2px_8px_-2px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_-6px_rgba(0,94,93,0.12)] transition-all duration-300 overflow-hidden">
+      <div className="bg-white rounded-3xl border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),0_2px_8px_-2px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_-6px_rgba(241,90,36,0.15)] transition-all duration-300 overflow-hidden">
         {/* 3D Header Bar */}
-        <div className="bg-gradient-to-r from-[#005E5D] via-[#007472] to-[#004a49] text-white px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_6px_rgba(0,0,0,0.15)]">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] text-white px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_6px_rgba(0,0,0,0.15)]">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center text-white border border-white/20 shadow-xs">
-              <UserCheck className="w-4 h-4 text-teal-200" />
+              <UserCheck className="w-4 h-4 text-white" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-xs sm:text-sm font-black tracking-widest uppercase">INITIAL DATA ENTRY</h2>
-                <span className="text-[9px] font-extrabold uppercase bg-white/20 text-teal-100 px-2 py-0.5 rounded-full border border-white/20">
+                <span className="text-[9px] font-extrabold uppercase bg-white/20 text-white px-2 py-0.5 rounded-full border border-white/20">
                   Bagian 3
                 </span>
               </div>
-              <p className="text-[10px] text-teal-100/80 font-normal">Perekaman identitas KTP dan alamat domisili calon debitur perorangan</p>
+              <p className="text-[10px] text-white/80 font-normal">Perekaman identitas KTP dan alamat domisili calon debitur perorangan</p>
             </div>
           </div>
-          <div className="text-[10px] font-mono font-bold text-teal-100 bg-black/20 px-3 py-1.5 rounded-xl border border-white/10 w-max">
+          <div className="text-[10px] font-mono font-bold text-white bg-black/20 px-3 py-1.5 rounded-xl border border-white/10 w-max">
             Debitur Perorangan
           </div>
         </div>
@@ -832,108 +832,108 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
           {/* Kolom Kiri */}
           <div className="bg-white rounded-2xl border border-slate-200/80 shadow-2xs p-4 sm:p-5">
             <div className="flex items-center gap-2 mb-3 pb-2.5 border-b border-slate-100">
-              <span className="w-2 h-2 rounded-full bg-[#005E5D]" />
+              <span className="w-2 h-2 rounded-full bg-[#F15A24]" />
               <span className="font-bold text-xs text-slate-800 tracking-wide uppercase">Identitas Pribadi Sesuai e-KTP</span>
             </div>
-            <table className="w-full text-[11px]">
+            <div className="overflow-x-auto w-full"><table className="w-full text-[11px]">
               <tbody>
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Gelar Sebelum :</td>
                   <td className="p-1.5">
                     <input
                       type="text"
                       value={formData?.gelarSebelum || ''}
                       onChange={(e) => onChange('gelarSebelum', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Nama Depan :</td>
                   <td className="p-1.5">
                     <input
                       type="text"
                       value={formData?.namaDepan || ''}
                       onChange={(e) => onChange('namaDepan', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Nama Tengah :</td>
                   <td className="p-1.5">
                     <input
                       type="text"
                       value={formData?.namaTengah || ''}
                       onChange={(e) => onChange('namaTengah', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Nama Belakang :</td>
                   <td className="p-1.5">
                     <input
                       type="text"
                       value={formData?.namaBelakang || ''}
                       onChange={(e) => onChange('namaBelakang', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Gelar Sesudah :</td>
                   <td className="p-1.5">
                     <input
                       type="text"
                       value={formData?.gelarSesudah || ''}
                       onChange={(e) => onChange('gelarSesudah', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Alamat KTP :</td>
                   <td className="p-1.5">
                     <input
                       type="text"
                       value={formData?.alamatKtp || ''}
                       onChange={(e) => onChange('alamatKtp', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Kelurahan/Desa :</td>
                   <td className="p-1.5">
                     <input
                       type="text"
                       value={formData?.kelurahanKtp || ''}
                       onChange={(e) => onChange('kelurahanKtp', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Kecamatan :</td>
                   <td className="p-1.5">
                     <input
                       type="text"
                       value={formData?.kecamatanKtp || ''}
                       onChange={(e) => onChange('kecamatanKtp', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Rt / Rw :</td>
                   <td className="p-1.5">
                     <div className="flex items-center gap-1.5">
@@ -942,7 +942,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         maxLength={3}
                         value={formData?.rtKtp || ''}
                         onChange={(e) => onChange('rtKtp', e.target.value)}
-                        className="w-12 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs text-center focus:outline-none focus:ring-1 focus:ring-teal-500"
+                        className="w-12 h-[22px] px-1.5 bg-white border border-gray-400 text-xs text-center focus:outline-none focus:ring-1 focus:ring-orange-500"
                       />
                       <span>/</span>
                       <input
@@ -950,13 +950,13 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         maxLength={3}
                         value={formData?.rwKtp || ''}
                         onChange={(e) => onChange('rwKtp', e.target.value)}
-                        className="w-12 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs text-center focus:outline-none focus:ring-1 focus:ring-teal-500"
+                        className="w-12 h-[22px] px-1.5 bg-white border border-gray-400 text-xs text-center focus:outline-none focus:ring-1 focus:ring-orange-500"
                       />
                     </div>
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Kodepos :</td>
                   <td className="p-1.5">
                     <div className="flex items-center gap-1.5">
@@ -967,7 +967,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         onChange={(e) => handleKodeposInputChange(e.target.value, 'Ktp')}
                         onBlur={() => handleKodeposInputBlur('Ktp')}
                         placeholder="Contoh: 42111"
-                        className="w-20 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                        className="w-20 h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-orange-500"
                       />
                       <button
                         type="button"
@@ -987,12 +987,12 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                       type="text"
                       value={formData?.kotaKtp || ''}
                       onChange={(e) => onChange('kotaKtp', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           {/* Kolom Kanan */}
@@ -1001,9 +1001,9 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
               <span className="w-2 h-2 rounded-full bg-[#E05A10]" />
               <span className="font-bold text-xs text-slate-800 tracking-wide uppercase">Alamat Domisili & Nomor Kontak</span>
             </div>
-            <table className="w-full text-[11px]">
+            <div className="overflow-x-auto w-full"><table className="w-full text-[11px]">
               <tbody>
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Alamat Tinggal :</td>
                   <td className="p-1.5">
                     <label className="flex items-center gap-1.5 cursor-pointer select-none text-xs font-medium text-gray-700">
@@ -1011,14 +1011,14 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         type="checkbox"
                         checked={Boolean(formData?.samaDenganKtp)}
                         onChange={(e) => handleCheckboxSameAddress(e.target.checked)}
-                        className="h-3.5 w-3.5 text-teal-600 rounded border-gray-300 focus:ring-teal-500"
+                        className="h-3.5 w-3.5 text-[#F15A24] rounded border-gray-300 focus:ring-orange-500"
                       />
                       <span>Sama dengan Alamat KTP</span>
                     </label>
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">:</td>
                   <td className="p-1.5">
                     <input
@@ -1026,12 +1026,12 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                       value={formData?.alamatTinggal || ''}
                       onChange={(e) => onChange('alamatTinggal', e.target.value)}
                       disabled={Boolean(formData?.samaDenganKtp)}
-                      className="w-full max-w-[260px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs disabled:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs disabled:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-orange-500"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Kelurahan/Desa :</td>
                   <td className="p-1.5">
                     <input
@@ -1039,12 +1039,12 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                       value={formData?.kelurahanTinggal || ''}
                       onChange={(e) => onChange('kelurahanTinggal', e.target.value)}
                       disabled={Boolean(formData?.samaDenganKtp)}
-                      className="w-full max-w-[260px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs disabled:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs disabled:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-orange-500"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Kecamatan :</td>
                   <td className="p-1.5">
                     <input
@@ -1052,12 +1052,12 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                       value={formData?.kecamatanTinggal || ''}
                       onChange={(e) => onChange('kecamatanTinggal', e.target.value)}
                       disabled={Boolean(formData?.samaDenganKtp)}
-                      className="w-full max-w-[260px] h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs disabled:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-teal-500"
+                      className="w-full max-w-[260px] h-[22px] px-1.5 bg-white border border-gray-400 text-xs disabled:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-orange-500"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Rt / Rw :</td>
                   <td className="p-1.5">
                     <div className="flex items-center gap-1.5">
@@ -1067,7 +1067,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         value={formData?.rtTinggal || ''}
                         onChange={(e) => onChange('rtTinggal', e.target.value)}
                         disabled={Boolean(formData?.samaDenganKtp)}
-                        className="w-14 h-[28px] px-2 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs text-center rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] disabled:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                        className="w-14 h-[28px] px-2 bg-white border border-slate-300 text-gray-900 text-xs text-center rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] disabled:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                       />
                       <span>/</span>
                       <input
@@ -1076,13 +1076,13 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         value={formData?.rwTinggal || ''}
                         onChange={(e) => onChange('rwTinggal', e.target.value)}
                         disabled={Boolean(formData?.samaDenganKtp)}
-                        className="w-14 h-[28px] px-2 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs text-center rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] disabled:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                        className="w-14 h-[28px] px-2 bg-white border border-slate-300 text-gray-900 text-xs text-center rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] disabled:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                       />
                     </div>
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Kodepos :</td>
                   <td className="p-1.5">
                     <div className="flex items-center gap-1.5">
@@ -1094,7 +1094,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         onBlur={() => handleKodeposInputBlur('Tinggal')}
                         disabled={Boolean(formData?.samaDenganKtp)}
                         placeholder="Contoh: 42111"
-                        className="w-24 h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] disabled:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                        className="w-24 h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] disabled:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                       />
                       <button
                         type="button"
@@ -1108,7 +1108,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Kota :</td>
                   <td className="p-1.5">
                     <input
@@ -1116,12 +1116,12 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                       value={formData?.kotaTinggal || ''}
                       onChange={(e) => onChange('kotaTinggal', e.target.value)}
                       disabled={Boolean(formData?.samaDenganKtp)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] disabled:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] disabled:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">No. Telp :</td>
                   <td className="p-1.5">
                     <div className="flex items-center gap-1.5">
@@ -1131,38 +1131,38 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                         maxLength={4}
                         value={formData?.noTelpArea || ''}
                         onChange={(e) => onChange('noTelpArea', e.target.value)}
-                        className="w-14 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                        className="w-14 h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-orange-500"
                       />
                       <input
                         type="text"
                         value={formData?.noTelpNumber || ''}
                         onChange={(e) => onChange('noTelpNumber', e.target.value)}
-                        className="w-32 h-[22px] px-1.5 bg-[#fffde6] border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                        className="w-32 h-[22px] px-1.5 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-orange-500"
                       />
                     </div>
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">No. Handphone :</td>
                   <td className="p-1.5">
                     <input
                       type="text"
                       value={formData?.noHandphone || ''}
                       onChange={(e) => onChange('noHandphone', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
 
-                <tr className="border-b border-slate-100 hover:bg-teal-50/30 transition-colors">
+                <tr className="border-b border-slate-100 hover:bg-orange-50/30 transition-colors">
                   <td className="w-40 text-right pr-3 py-1.5 font-medium text-slate-600 whitespace-nowrap text-[11px]">Alamat E-Mail :</td>
                   <td className="p-1.5">
                     <input
                       type="email"
                       value={formData?.email || ''}
                       onChange={(e) => onChange('email', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-800 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     />
                   </td>
                 </tr>
@@ -1173,7 +1173,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                     <select
                       value={formData?.tipeNasabah || ''}
                       onChange={(e) => onChange('tipeNasabah', e.target.value)}
-                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-[#fffde6] border border-amber-300/80 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-teal-500/25 focus:border-[#007B83] transition-all"
+                      className="w-full max-w-[260px] h-[28px] px-2.5 bg-white border border-slate-300 text-gray-900 text-xs rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-[#F15A24] transition-all"
                     >
                       <option value="">- SELECT -</option>
                       {tipeNasabahList.map((t: any) => (
@@ -1185,7 +1185,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </table></div>
           </div>
         </div>
       </div>
@@ -1198,7 +1198,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
           type="button"
           onClick={onLanjut}
           disabled={isSubmitting}
-          className="inline-flex items-center justify-center gap-3 px-16 py-3.5 rounded-2xl bg-gradient-to-r from-[#005E5D] via-[#007472] to-[#004a49] hover:from-[#004e4d] hover:to-[#003d3c] active:translate-y-0.5 active:scale-[0.98] text-white font-black text-xs uppercase tracking-widest shadow-[0_8px_24px_rgba(0,94,93,0.4),0_2px_4px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_32px_rgba(0,94,93,0.5)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed border border-teal-400/30"
+          className="inline-flex items-center justify-center gap-3 px-16 py-3.5 rounded-2xl bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] hover:from-[#E05A10] hover:to-[#D94E1B] active:translate-y-0.5 active:scale-[0.98] text-white font-black text-xs uppercase tracking-widest shadow-[0_8px_24px_rgba(241,90,36,0.35),0_2px_4px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_32px_rgba(241,90,36,0.45)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed border border-orange-400/30"
         >
           <span>{isSubmitting ? 'Menyimpan Draf...' : 'Simpan & Lanjut ke Obyek Pembiayaan'}</span>
           <ArrowRight className="w-4 h-4" />
@@ -1209,8 +1209,8 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
       {/* Modal Popup Pencarian Kode Pos (Sesuai CuBES SearchZipCode) */}
       {zipcodeModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-[1px]">
-          <div className="bg-white border border-teal-600/30 shadow-2xl rounded-2xl w-full max-w-2xl overflow-hidden font-sans text-xs animate-scale-up">
-            <div className="bg-gradient-to-r from-[#005E5D] via-[#007876] to-[#005E5D] text-white font-bold px-4 py-2.5 flex items-center justify-between shadow-xs">
+          <div className="bg-white border border-orange-500/30 shadow-2xl rounded-2xl w-full max-w-2xl overflow-hidden font-sans text-xs animate-scale-up">
+            <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] text-white font-bold px-4 py-2.5 flex items-center justify-between shadow-xs">
               <span>Pencarian Kode Pos / Wilayah (CuBES eLO)</span>
               <button
                 type="button"
@@ -1231,13 +1231,13 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                     searchZipcodes(e.target.value);
                   }}
                   placeholder="Ketik nama Kota, Kecamatan, Kelurahan, atau Kode Pos..."
-                  className="flex-1 h-7 px-2 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-teal-500"
+                  className="flex-1 h-7 px-2 bg-white border border-gray-400 text-xs focus:outline-none focus:ring-1 focus:ring-orange-500"
                   autoFocus
                 />
                 <button
                   type="button"
                   onClick={() => searchZipcodes(zipcodeSearchQuery)}
-                  className="h-7 px-3 bg-[#007B83] text-white hover:bg-[#005f66] text-xs font-semibold rounded-xs transition-colors cursor-pointer"
+                  className="h-7 px-3 bg-[#F15A24] text-white hover:bg-[#D94E1B] text-xs font-semibold rounded-xs transition-colors cursor-pointer"
                 >
                   Cari
                 </button>
@@ -1245,7 +1245,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
 
               <div className="border border-gray-300 max-h-64 overflow-y-auto bg-white">
                 <table className="w-full text-left text-[11px]">
-                  <thead className="bg-[#b9dede] text-[#004d40] sticky top-0 border-b border-[#007B83]/30 font-semibold">
+                  <thead className="bg-orange-100 text-orange-950 sticky top-0 border-b border-orange-300 font-semibold">
                     <tr>
                       <th className="py-1 px-2">Kode Pos</th>
                       <th className="py-1 px-2">Kelurahan</th>
@@ -1266,10 +1266,10 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                       zipcodeSearchResults.map((item, idx) => (
                         <tr
                           key={idx}
-                          className="hover:bg-teal-50 transition-colors cursor-pointer"
+                          className="hover:bg-orange-50 transition-colors cursor-pointer"
                           onClick={() => handleSelectZipcode(item)}
                         >
-                          <td className="py-1 px-2 font-mono font-bold text-teal-800">{item.zipcode || item.ZIPCODE}</td>
+                          <td className="py-1 px-2 font-mono font-bold text-orange-900">{item.zipcode || item.ZIPCODE}</td>
                           <td className="py-1 px-2">{item.kelurahan || item.KELURAHAN}</td>
                           <td className="py-1 px-2">{item.kecamatan || item.KECAMATAN}</td>
                           <td className="py-1 px-2 font-semibold text-gray-800">{item.kota || item.KOTA}</td>
@@ -1281,7 +1281,7 @@ export const InformasiSourceAplikasi: React.FC<InformasiSourceAplikasiProps> = (
                                 e.stopPropagation();
                                 handleSelectZipcode(item);
                               }}
-                              className="px-2 py-0.5 bg-[#007B83] text-white hover:bg-[#005f66] text-[10px] font-medium rounded-xs cursor-pointer"
+                              className="px-2 py-0.5 bg-[#F15A24] text-white hover:bg-[#D94E1B] text-[10px] font-medium rounded-xs cursor-pointer"
                             >
                               Pilih
                             </button>

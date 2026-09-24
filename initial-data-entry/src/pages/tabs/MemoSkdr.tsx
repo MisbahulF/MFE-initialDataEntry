@@ -44,8 +44,8 @@ export const MemoSkdr: React.FC<MemoSkdrProps> = ({
 
   return (
     <div className="space-y-4 animate-fade-in text-xs">
-      <div className="bg-white border border-[#007b83] rounded-xl shadow-sm overflow-hidden">
-        <div className="bg-gradient-to-r from-teal-700 via-[#007b83] to-teal-800 px-4 py-2 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-2xs">
+      <div className="bg-white border border-orange-300/70 rounded-xl shadow-sm overflow-hidden">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] px-4 py-2 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-2xs">
           <StickyNote className="h-4 w-4 text-orange-300" />
           <span>REFERAL MEMO &amp; CATATAN ANALIS</span>
         </div>
@@ -64,14 +64,14 @@ export const MemoSkdr: React.FC<MemoSkdrProps> = ({
             <button
               type="button"
               onClick={handleAddMemo}
-              className="px-5 py-2.5 bg-[#007b83] hover:bg-teal-800 text-white font-bold rounded-lg flex items-center gap-1.5 cursor-pointer shadow-xs text-xs shrink-0 mb-1 active:scale-95"
+              className="px-5 py-2.5 bg-[#F15A24] hover:bg-[#D94E1B] text-white font-bold rounded-lg flex items-center gap-1.5 cursor-pointer shadow-xs text-xs shrink-0 mb-1 active:scale-95"
             >
               <Plus className="h-4 w-4" /> Simpan Memo
             </button>
           </div>
 
           <div className="border border-gray-200 rounded-lg overflow-hidden bg-white">
-            <table className="w-full text-xs text-left border-collapse">
+            <div className="overflow-x-auto w-full"><table className="w-full text-xs text-left border-collapse">
               <thead className="bg-[#d35400] text-white font-bold border-b border-[#b33e00]">
                 <tr>
                   <th className="p-2 text-center w-12 border-r border-[#b33e00]">No</th>
@@ -89,7 +89,7 @@ export const MemoSkdr: React.FC<MemoSkdrProps> = ({
                   </tr>
                 ) : (
                   memoList.map((m, i) => (
-                    <tr key={m.id || i} className="hover:bg-[#fffde6]">
+                    <tr key={m.id || i} className="hover:bg-white">
                       <td className="p-2 text-center font-mono text-gray-800 border-r border-gray-200">{i + 1}</td>
                       <td className="p-2 font-mono text-gray-600 border-r border-gray-200">{m.tgl}</td>
                       <td className="p-2 font-semibold text-gray-900 border-r border-gray-200">{m.user}</td>
@@ -98,15 +98,15 @@ export const MemoSkdr: React.FC<MemoSkdrProps> = ({
                   ))
                 )}
               </tbody>
-            </table>
+            </table></div>
           </div>
 
           <div className="pt-2">
-            <h5 className="font-bold text-xs text-teal-900 uppercase tracking-wider mb-2">
+            <h5 className="font-bold text-xs text-orange-950 uppercase tracking-wider mb-2">
               Surat Keterangan Diberikan Rekomendasi (SKDR)
             </h5>
             <div className="border border-gray-200 rounded-lg overflow-hidden bg-white">
-              <table className="w-full text-xs text-left border-collapse">
+              <div className="overflow-x-auto w-full"><table className="w-full text-xs text-left border-collapse">
                 <thead className="bg-[#d35400] text-white font-bold border-b border-[#b33e00]">
                   <tr>
                     <th className="p-2 text-center w-12 border-r border-[#b33e00]">No</th>
@@ -125,7 +125,7 @@ export const MemoSkdr: React.FC<MemoSkdrProps> = ({
                     </tr>
                   ) : (
                     skdrList.map((s, i) => (
-                      <tr key={s.id || i} className="hover:bg-[#fffde6]">
+                      <tr key={s.id || i} className="hover:bg-white">
                         <td className="p-2 text-center font-mono text-gray-800 border-r border-gray-200">{i + 1}</td>
                         <td className="p-2 font-mono text-gray-600 border-r border-gray-200">{s.tgl}</td>
                         <td className="p-2 font-semibold text-gray-900 border-r border-gray-200">{s.keterangan}</td>
@@ -135,7 +135,7 @@ export const MemoSkdr: React.FC<MemoSkdrProps> = ({
                     ))
                   )}
                 </tbody>
-              </table>
+              </table></div>
             </div>
           </div>
         </div>
@@ -146,9 +146,9 @@ export const MemoSkdr: React.FC<MemoSkdrProps> = ({
           <button
             type="button"
             onClick={onLanjut}
-            className="px-12 py-2 bg-[#007b83] hover:bg-teal-800 text-white font-bold text-xs tracking-wider rounded border border-teal-900 shadow-md cursor-pointer active:scale-95"
+            className="px-12 py-2 bg-[#F15A24] hover:bg-[#D94E1B] text-white font-bold text-xs tracking-wider rounded border border-orange-800 shadow-md cursor-pointer active:scale-95"
           >
-            Simpan &amp; Kirim ke Processing
+            Simpan Data Pengajuan
           </button>
         </div>
       )}

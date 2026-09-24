@@ -84,7 +84,7 @@ const SearchInput = ({ label, value, onChange, onSearch, placeholder }: any) => 
     <div className="flex-1">
       <TextField label={label} value={value} onChange={onChange} placeholder={placeholder} />
     </div>
-    <button type="button" onClick={onSearch} className="px-3 py-1.5 bg-[#007b83] hover:bg-teal-800 text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0 mb-0.5">
+    <button type="button" onClick={onSearch} className="px-3 py-1.5 bg-[#F15A24] hover:bg-[#D94E1B] text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0 mb-0.5">
       Cari
     </button>
   </div>
@@ -103,8 +103,8 @@ export const InformasiPerbankan: React.FC<InformasiPerbankanProps> = ({
   return (
     <div className="space-y-6 animate-fade-in text-xs">
       {/* 1. ACCOUNT BANK */}
-      <div className="bg-white border border-[#007b83] rounded-xl shadow-sm overflow-hidden">
-        <div className="bg-gradient-to-r from-teal-700 via-[#007b83] to-teal-800 px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center">ACCOUNT BANK</div>
+      <div className="bg-white border border-orange-300/70 rounded-xl shadow-sm overflow-hidden">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center">ACCOUNT BANK</div>
         <div className="p-4 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4 bg-[#f8fafb]">
           <div className="space-y-3 border-b lg:border-b-0 lg:border-r border-gray-200 lg:pr-6 pb-4 lg:pb-0">
             <SearchInput label="Nama Bank" value={bankAccForm?.namaBank || ''} onChange={(e: any) => updateBank('namaBank', e.target.value)} onSearch={handleCariBankAcc} placeholder="Contoh: BANK BNI" />
@@ -139,8 +139,8 @@ export const InformasiPerbankan: React.FC<InformasiPerbankanProps> = ({
       </div>
 
       {/* 2. PINJAMAN DI BANK LAIN */}
-      <div className="bg-white border border-[#007b83] rounded-xl shadow-sm overflow-hidden">
-        <div className="bg-gradient-to-r from-teal-700 via-[#007b83] to-teal-800 px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center">PINJAMAN DI BANK LAIN</div>
+      <div className="bg-white border border-orange-300/70 rounded-xl shadow-sm overflow-hidden">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center">PINJAMAN DI BANK LAIN</div>
         <div className="p-4 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4 bg-[#f8fafb]">
           <div className="space-y-3 border-b lg:border-b-0 lg:border-r border-gray-200 lg:pr-6 pb-4 lg:pb-0">
             <SearchInput label="Nama Bank" value={otherLoanForm?.namaBank || ''} onChange={(e: any) => updateLoan('namaBank', e.target.value)} onSearch={handleCariBankLoan} placeholder="Nama bank" />
@@ -180,8 +180,8 @@ export const InformasiPerbankan: React.FC<InformasiPerbankanProps> = ({
       </div>
 
       {/* 3. KARTU KREDIT */}
-      <div className="bg-white border border-[#007b83] rounded-xl shadow-sm overflow-hidden">
-        <div className="bg-gradient-to-r from-teal-700 via-[#007b83] to-teal-800 px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center">KARTU KREDIT</div>
+      <div className="bg-white border border-orange-300/70 rounded-xl shadow-sm overflow-hidden">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center">KARTU KREDIT</div>
         <div className="p-4 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4 bg-[#f8fafb]">
           <div className="space-y-3 border-b lg:border-b-0 lg:border-r border-gray-200 lg:pr-6 pb-4 lg:pb-0">
             <SearchInput label="Nama Bank" value={creditCardForm?.namaBank || ''} onChange={(e: any) => updateCC('namaBank', e.target.value)} onSearch={handleCariBankCC} placeholder="Nama bank penerbit" />

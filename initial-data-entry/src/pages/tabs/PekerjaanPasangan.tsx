@@ -21,8 +21,8 @@ export const PekerjaanPasangan: React.FC<PekerjaanPasanganProps> = ({
 
   return (
     <div className="space-y-4 animate-fade-in">
-      <div className="bg-white border border-[#007b83] rounded-xl shadow-sm overflow-hidden">
-        <div className="bg-gradient-to-r from-teal-700 via-[#007b83] to-teal-800 px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center shadow-2xs">
+      <div className="bg-white border border-orange-300/70 rounded-xl shadow-sm overflow-hidden">
+        <div className="bg-gradient-to-r from-[#F15A24] via-[#F37021] to-[#E05A10] px-4 py-2 text-white font-bold text-xs uppercase tracking-wider text-center shadow-2xs">
           PEKERJAAN PASANGAN
         </div>
 
@@ -37,7 +37,7 @@ export const PekerjaanPasangan: React.FC<PekerjaanPasanganProps> = ({
               <div className="flex-1">
                 <TextField label="Kodepos" maxLength={10} value={formData?.kodeposKantorPasangan || ''} onChange={(e) => onChange('kodeposKantorPasangan', e.target.value)} placeholder="Contoh: 10260" />
               </div>
-              <button type="button" onClick={handleCariZip} className="px-3 py-1.5 bg-[#007b83] hover:bg-teal-800 text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0 mb-0.5">Cari</button>
+              <button type="button" onClick={handleCariZip} className="px-3 py-1.5 bg-[#F15A24] hover:bg-[#D94E1B] text-white rounded text-xs font-semibold shadow-xs cursor-pointer shrink-0 mb-0.5">Cari</button>
             </div>
             <TextField label="Kota" disabled value={formData?.kotaKantorPasangan || ''} onChange={(e) => onChange('kotaKantorPasangan', e.target.value)} placeholder="Kota otomatis terisi" />
             <SelectField label="Jabatan Pekerjaan" value={formData?.jabatanPekerjaanPasangan || ''} onChange={(e) => onChange('jabatanPekerjaanPasangan', e.target.value)} options={['TIDAK BEKERJA', 'Direktur / Pejabat Tinggi', 'Manager', 'Supervisor / Team Leader', 'Staff', 'Non-Staff / Pelaksana'].map(v => ({ label: v, value: v }))} />
@@ -79,7 +79,7 @@ export const PekerjaanPasangan: React.FC<PekerjaanPasanganProps> = ({
 
       {onLanjut && (
         <div className="flex justify-end pt-2">
-          <button type="button" onClick={onLanjut} className="px-6 py-2 bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm cursor-pointer active:scale-95">Lanjut</button>
+          <button type="button" onClick={onLanjut} className="px-6 py-2 bg-gradient-to-r from-[#F15A24] to-[#E05A10] hover:from-[#E05A10] text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm cursor-pointer active:scale-95">Lanjut</button>
         </div>
       )}
     </div>
