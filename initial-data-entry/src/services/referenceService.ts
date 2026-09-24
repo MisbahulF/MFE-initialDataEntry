@@ -3,9 +3,10 @@
  * Centralized master data fetching with client cache and fallback
  */
 
+import { getApiBaseUrl } from '@template/shared';
 import { ZipcodeResult, PartnerItem } from '../types/ide.types';
 
-const API_BASE = 'http://localhost:5139/api';
+const API_BASE = getApiBaseUrl();
 
 const MOCK_ZIPCODES: ZipcodeResult[] = [
   { zipcode: '42111', kelurahan: 'Kotabaru', kecamatan: 'Serang', kota: 'Kota Serang', provinsi: 'Banten' },

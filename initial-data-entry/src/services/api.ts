@@ -3,9 +3,10 @@
  * Centralized HTTP client consuming ASP.NET Core backend (Port 5139)
  */
 
+import { getApiBaseUrl } from '@template/shared';
 import { ApiResponse, ProspectItem, IdeFormData, CollateralItem } from '../types/ide.types';
 
-const API_BASE = 'http://localhost:5139/api';
+export const API_BASE = getApiBaseUrl();
 
 const defaultHeaders = {
   'Content-Type': 'application/json',

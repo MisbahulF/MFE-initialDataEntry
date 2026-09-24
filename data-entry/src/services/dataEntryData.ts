@@ -1,3 +1,5 @@
+import { getApiBaseUrl } from '@template/shared';
+const API_BASE = getApiBaseUrl();
 ﻿export interface AssetRecord {
   id: string;
   bankName: string;
@@ -295,7 +297,7 @@ export const dataEntryService = {
 
   syncWithBackend: async (): Promise<DataEntryRecord[]> => {
     try {
-      const res = await fetch('http://localhost:5139/api/DataEntry/applications');
+      const res = await fetch(`${API_BASE}/DataEntry/applications`);
       if (res.ok) {
         const apps = await res.json();
         const localRecords = dataEntryService.getRecords();
@@ -313,15 +315,10 @@ export const dataEntryService = {
           const key = app.noAplikasi || app.noProspek || innerData.id;
           const merged: DataEntryRecord = {
             id: innerData.id || `DE-${app.noAplikasi}`,
-            noAplikasi: app.noAplikasi,
-            noProspek: app.noProspek || '',
-            namaDebitur: app.namaDebitur || 'DEBITUR',
-            ktp: app.ktp || '',
             npwp: innerData.npwp || '',
             telepon: innerData.telepon || '',
             alamatKtp: innerData.alamatKtp || '',
             alamatDomisili: innerData.alamatDomisili || '',
-            produk: app.produk || 'BNI GRIYA',
             fasilitas: innerData.fasilitas || 'GRIYA IDAMAN PEMBELIAN RUMAH',
             kodeProgram: innerData.kodeProgram || 'REGULER',
             tujuanPembiayaan: innerData.tujuanPembiayaan || 'RUMAH BARU',
@@ -330,9 +327,7 @@ export const dataEntryService = {
             jangkaWaktu: innerData.jangkaWaktu || '24 bulan',
             salesId: innerData.salesId || 'SC70629',
             salesName: innerData.salesName || 'SURYA HARJAYA',
-            cabang: app.cabang || '046 - SERANG',
             tglKirimSales: app.createdAt || new Date().toLocaleString('id-ID'),
-            status: (app.status || 'Menunggu Data Entry') as any,
             ...innerData,
             noAplikasi: app.noAplikasi,
             noProspek: app.noProspek || innerData.noProspek,
@@ -368,7 +363,7 @@ export const dataEntryService = {
     }
 
     // Persist directly to backend SQLite
-    fetch('http://localhost:5139/api/DataEntry/applications', {
+    fetch(`${API_BASE}/DataEntry/applications`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -391,7 +386,7 @@ export const dataEntryService = {
 
     // Hapus dari SQLite database
     try {
-      await fetch(`http://localhost:5139/api/DataEntry/applications/${encodeURIComponent(idOrNoApp)}`, {
+      await fetch(`${API_BASE}/DataEntry/applications/${encodeURIComponent(idOrNoApp)}`, {
         method: 'DELETE',
       });
     } catch (e) {

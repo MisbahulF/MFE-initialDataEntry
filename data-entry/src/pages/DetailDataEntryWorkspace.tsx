@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth, storage, STORAGE_KEYS, Badge } from '@template/shared';
+import { useAuth, storage, STORAGE_KEYS, Badge, getApiBaseUrl } from '@template/shared';
+const API_BASE = getApiBaseUrl();
 import {
   Home,
   LogOut,
@@ -276,7 +277,7 @@ export const DetailDataEntryWorkspace: React.FC<DetailDataEntryWorkspaceProps> =
       // Persist to backend SQLite
       const savedRecord = foundIdx !== -1 ? apps[foundIdx] : apps[0];
       if (savedRecord) {
-        fetch('http://localhost:5139/api/DataEntry/applications', {
+        fetch(`${API_BASE}/DataEntry/applications`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

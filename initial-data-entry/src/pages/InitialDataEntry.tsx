@@ -1,5 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { useAuth, eventBus } from '@template/shared';
+import { API_BASE } from '../services/api';
 import { InformasiSourceAplikasi } from './tabs/InformasiSourceAplikasi';
 import { ObyekPembiayaan } from './tabs/ObyekPembiayaan';
 import { InformasiDebitur } from './tabs/InformasiDebitur';
@@ -368,7 +369,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
     }
     setIsCheckingBlacklist(true);
     try {
-      const res = await fetch('http://localhost:5139/api/PreScreening/update-check-blacklist-griya', {
+      const res = await fetch(`${API_BASE}/PreScreening/update-check-blacklist-griya`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -478,7 +479,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
   // Hydrate collaterals directly from SQLite Backend
   useEffect(() => {
     if (selectedProspect?.noProspek && selectedProspect.noProspek !== 'Auto Generate') {
-      fetch('http://localhost:5139/api/Collateral/get-collateral-griya', {
+      fetch(`${API_BASE}/Collateral/get-collateral-griya`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ coldProspectId: selectedProspect.noProspek }),
@@ -1068,7 +1069,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
       } catch { }
 
       // 2. Fetch data aplikasi asli langsung dari database SQLite backend
-      fetch(`http://localhost:5139/api/DataEntry/applications/${encodeURIComponent(selectedProspect.noProspek)}`)
+      fetch(`${API_BASE}/DataEntry/applications/${encodeURIComponent(selectedProspect.noProspek)}`)
         .then(res => (res.ok ? res.json() : null))
         .then(appData => {
           setIsSubmitting(false);
@@ -1222,7 +1223,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
       // 2. REAL BACKEND DB PERSISTENCE (SQLite elo_local.db)
       const namaDebiturDraft = [currentFd.namaDepan, currentFd.namaTengah, currentFd.namaBelakang].filter(Boolean).join(' ').trim() || currentFd.nama || 'DEBITUR DRAFT';
       
-      const appSavePromise = fetch('http://localhost:5139/api/DataEntry/applications', {
+      const appSavePromise = fetch(`${API_BASE}/DataEntry/applications`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1242,7 +1243,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
 
       // Call dedicated BNI eLO routes matching official controllers
       if (activeTab === 0) {
-        const sourcePromise = fetch('http://localhost:5139/api/SourceApplicant/save-applicant-griya', {
+        const sourcePromise = fetch(`${API_BASE}/SourceApplicant/save-applicant-griya`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -1273,7 +1274,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
         await appSavePromise;
         if (activeTab === 1 && collaterals.length > 0) {
           await Promise.all(collaterals.map((col: any) =>
-            fetch('http://localhost:5139/api/Collateral/save-collateral-griya', {
+            fetch(`${API_BASE}/Collateral/save-collateral-griya`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -1293,7 +1294,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
             }).catch(() => null)
           ));
         } else if (activeTab === 2) {
-          await fetch('http://localhost:5139/api/DebiturInformation/save-debitur-griya', {
+          await fetch(`${API_BASE}/DebiturInformation/save-debitur-griya`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -1306,7 +1307,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
             })
           }).catch(() => null);
         } else if (activeTab === 3) {
-          await fetch('http://localhost:5139/api/DebiturJob/save-debitur-job-griya', {
+          await fetch(`${API_BASE}/DebiturJob/save-debitur-job-griya`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -1319,7 +1320,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
             })
           }).catch(() => null);
         } else if (activeTab === 4) {
-          await fetch('http://localhost:5139/api/SpouseInformation/save-spouse-griya', {
+          await fetch(`${API_BASE}/SpouseInformation/save-spouse-griya`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -1330,7 +1331,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
             })
           }).catch(() => null);
         } else if (activeTab === 5) {
-          await fetch('http://localhost:5139/api/SpouseJobInformation/save-spouse-job-griya', {
+          await fetch(`${API_BASE}/SpouseJobInformation/save-spouse-job-griya`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -1342,7 +1343,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
             })
           }).catch(() => null);
         } else if (activeTab === 6) {
-          await fetch('http://localhost:5139/api/EmergencyContact/save-emergency-griya', {
+          await fetch(`${API_BASE}/EmergencyContact/save-emergency-griya`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -1354,7 +1355,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
             })
           }).catch(() => null);
         } else if (activeTab === 7) {
-          await fetch('http://localhost:5139/api/BankInformation/save-bank-griya', {
+          await fetch(`${API_BASE}/BankInformation/save-bank-griya`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -1364,7 +1365,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
             })
           }).catch(() => null);
         } else if (activeTab === 8) {
-          await fetch('http://localhost:5139/api/ApprovalInPrincipal/update-prospect-griya', {
+          await fetch(`${API_BASE}/ApprovalInPrincipal/update-prospect-griya`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -1450,7 +1451,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
     setIsSubmitting(true);
     
     // Panggil API ApprovalInPrincipal backend resmi
-    fetch('http://localhost:5139/api/ApprovalInPrincipal/update-prospect-griya', {
+    fetch(`${API_BASE}/ApprovalInPrincipal/update-prospect-griya`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -1610,7 +1611,7 @@ export const InitialDataEntry: React.FC<InitialDataEntryProps> = ({
       }
 
       // Persist directly to backend SQLite database
-      fetch('http://localhost:5139/api/DataEntry/applications', {
+      fetch(`${API_BASE}/DataEntry/applications`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

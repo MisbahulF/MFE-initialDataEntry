@@ -1,6 +1,7 @@
 ﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth, storage, STORAGE_KEYS, Badge } from '@template/shared';
+import { API_BASE } from '../services/api';
 import { Home, LogOut, Search, RotateCcw, Plus, ChevronRight, AlertCircle } from 'lucide-react';
 
 export interface ProspectItem {
@@ -42,7 +43,7 @@ export const InitialDataEntryList: React.FC<InitialDataEntryListProps> = ({ onNa
   const loadProspectsData = async (doSearch: boolean = false) => {
     let res: ProspectItem[] = [];
     try {
-      const response = await fetch('http://localhost:5139/api/DataEntry/applications');
+      const response = await fetch(`${API_BASE}/DataEntry/applications`);
       if (response.ok) {
         const apps = await response.json();
         const fromBackend: ProspectItem[] = apps.map((app: any) => ({
@@ -111,7 +112,7 @@ export const InitialDataEntryList: React.FC<InitialDataEntryListProps> = ({ onNa
 
     // Hapus secara riil dari database SQLite lokal
     try {
-      await fetch(`http://localhost:5139/api/DataEntry/applications/${encodeURIComponent(noProspek)}`, {
+      await fetch(`${API_BASE}/DataEntry/applications/${encodeURIComponent(noProspek)}`, {
         method: 'DELETE',
       });
     } catch (e) {
